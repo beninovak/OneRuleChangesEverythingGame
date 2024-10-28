@@ -1,49 +1,111 @@
 using System;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SettingsController : MonoBehaviour {
     [SerializeField] private Slider masterVolumeSlider;
-    private GameObject mainMenuPanel, settingsPanel, audioPanel, currentPanel, previousPanel;
+    private GameObject currentPanel, previousPanel;
+    public GameObject mainMenuCanvas = null, settingsCanvas, settingsButtonPanel, audioPanel, videoPanel, goBackButton;
+    private Canvas settingsCanvasCanvas;
 
+    public bool isMainMenu = false;
+
+    private bool isGamePaused = false;
+    
     private void Start() {
-        audioPanel = GameObject.FindGameObjectWithTag("AudioMenu");
-        settingsPanel = GameObject.FindGameObjectWithTag("SettingsMenu");
-        mainMenuPanel = GameObject.FindGameObjectWithTag("MainMenuPanel");
-        
         AudioListener.volume = 0.5f;
         masterVolumeSlider.value = 0.5f;
+        settingsCanvasCanvas = settingsCanvas.GetComponent<Canvas>();
     }
 
-    public void AdjustVolume() {
-        AudioListener.volume = masterVolumeSlider.value;
-    }
-
-    public void OpenSettings() {
-        settingsPanel.SetActive(true);
-        currentPanel = settingsPanel;
-        
-        if (SceneManager.GetActiveScene().buildIndex == 0) { // In main menu
-            previousPanel = mainMenuPanel;
-        } else {
-            previousPanel = null;
+    void Update() {
+        Debug.Log("UPDATING");
+        if (Input.GetKeyDown(KeyCode.Escape) && !isMainMenu) {
+            Debug.Log("PRESSING ESCAPE");
+            isGamePaused = !isGamePaused;
+            PauseUnpauseGame();
         }
     }
     
+    private void PauseUnpauseGame () { // TODO - check why multiple pause/unpauses don't work
+        if (isGamePaused) {
+            Debug.Log("PAUSING GAME");
+            Time.timeScale = 0f;
+            OpenCloseSettings(true);
+        } else {
+            Debug.Log("UNPAUSING GAME");
+            Time.timeScale = 1f;
+            OpenCloseSettings(false);
+        }
+    }
+    
+    public void OpenCloseSettings(bool open) {
+        if (open) {
+            settingsCanvas.SetActive(true);
+            settingsCanvasCanvas.enabled = true;
+            goBackButton.SetActive(true);
+            currentPanel = settingsCanvas;
+            
+            if (isMainMenu) {
+                previousPanel = mainMenuCanvas; // TODO - asses if necessary
+                mainMenuCanvas.SetActive(false);
+            } else {
+                previousPanel = null;
+            }
+        } else {
+            settingsCanvas.SetActive(false);
+            goBackButton.SetActive(false);
+            
+            if (isMainMenu) {
+                mainMenuCanvas.SetActive(false);
+            }
+        }
+    }
+
+    public void GoBack() {
+        Debug.Log("Current: " + currentPanel);
+        Debug.Log("Previous: " + previousPanel);
+        currentPanel.SetActive(false);
+        
+        if (isMainMenu) {
+            previousPanel.SetActive(true);
+            if (previousPanel == mainMenuCanvas) {
+                settingsCanvas.SetActive(false);
+            } else if (previousPanel == settingsCanvas) {
+                previousPanel = mainMenuCanvas;
+                settingsButtonPanel.SetActive(true);
+            }
+        } else if (previousPanel == null || currentPanel == settingsCanvas) {
+            isGamePaused = false;
+            PauseUnpauseGame();
+        } else if (previousPanel != null) {
+            previousPanel.SetActive(true);
+            settingsButtonPanel.SetActive(true);
+            currentPanel = previousPanel;
+        }
+    }
+
     public void OpenAudio() {
         audioPanel.SetActive(true);
         currentPanel = audioPanel;
-        previousPanel = settingsPanel;
+        previousPanel = settingsCanvas;
+        settingsButtonPanel.SetActive(false);
+    }
+
+    public void OpenVideo() {
+        videoPanel.SetActive(true);
+        currentPanel = videoPanel;
+        previousPanel = settingsCanvas;
+        settingsButtonPanel.SetActive(false);
+    }
+
+    public void BackToMainMenu() {
+        SceneManager.LoadScene("MainMenu");
     }
     
-    public void GoBack() {
-        currentPanel.SetActive(false);
-
-        if (previousPanel != null) {
-            previousPanel.SetActive(true);
-        } else {
-            LevelMenu.PauseUnpauseGame();
-        }
+    public void AdjustVolume() {
+        AudioListener.volume = masterVolumeSlider.value;
     }
 }

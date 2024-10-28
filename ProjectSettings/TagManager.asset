@@ -9,6 +9,7 @@ TagManager:
   - VideoMenu
   - SettingsMenuButton
   - MainMenuPanel
+  - SettingsCanvas
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Test UI
   - 
   - 
   - 
