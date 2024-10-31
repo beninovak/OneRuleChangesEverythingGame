@@ -1,5 +1,6 @@
 using System;
 using Mono.Cecil.Cil;
+using NUnit.Framework.Constraints;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,57 +8,76 @@ public class PlayerController : MonoBehaviour {
     
     // ------ Movement variables ------ //
     private string  actionName;
-    private float   moveForce = 10f, jumpForce = 10f;
+    private float   moveForce = 0.8f,
+                    jumpForce = 10f,
+                    zRotationDegrees = 0,
+                    startingDrag;
+
     private bool    movingLeft = false, 
-                    movingRight = false, 
+                    movingRight = false,
+                    canMoveHorizontally = true,
                     canJump = true, 
                     wantsToJump = false, 
-                    isFalling = true ; // TODO - change to false, because player will start on the ground
+                    isFalling = false,
+                    isGrounded = true;
     
     private InputActionPhase actionPhase;
     
     // ------ Other ------ //
     private string currentItem = "";
     private Rigidbody2D rb;
-
+    
     private void Start() {
+        // Physics.defaultContactOffset = 0.1f;
+        
+        // Debug.Log(Physics.defaultContactOffset);
         rb = GetComponent<Rigidbody2D>();
+        startingDrag = rb.drag;
     }
 
     private void FixedUpdate() {
-        Debug.Log(rb.linearVelocityY);
-        if (movingRight) {
-            rb.AddForce(transform.right * moveForce);
-        } else if (movingLeft) {
-            rb.AddForce(-transform.right * moveForce);
+        // Debug.Log(rb.velocityY);
+        zRotationDegrees = transform.eulerAngles.z;
+        // canMoveHorizontally = (isGrounded && zRotationDegrees < 15f || zRotationDegrees > 345f); // 0 degrees at top
+        canMoveHorizontally = (isGrounded && zRotationDegrees < 45f || zRotationDegrees > 315f); // 0 degrees at top
+        
+        if (movingRight && canMoveHorizontally) {
+            rb.AddForce(Vector2.right * moveForce, ForceMode2D.Impulse);
+        } else if (movingLeft && canMoveHorizontally) {
+            rb.AddForce(-Vector2.right * moveForce, ForceMode2D.Impulse);
         }
 
         if (wantsToJump && canJump) {
-            
-            Debug.Log("TRYING JUMP");
-            
             canJump = false;
             wantsToJump = false;
-            
-            rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
+        
+        isFalling = rb.velocityY < 0f;
+        rb.drag = isGrounded ? startingDrag : 0f;
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
-        Debug.Log($"COLLIDING WITH: {other.gameObject.name}");
-        Debug.Log($"COLLIDING WITH TAG: {other.gameObject.tag}");
-
-        if (isFalling && other.gameObject.CompareTag("Player")) {
+        if (isFalling && other.gameObject.CompareTag("Platform")) {
             canJump = true;
-            Debug.Log("CAN JUMP AGAIN");
+            isGrounded = true;
+            rb.drag = startingDrag;
+            Debug.Log($"Grounded: {isGrounded}. Name: {other.gameObject.name}");
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D other) {
+        if (other.gameObject.CompareTag("Platform")) {
+            isGrounded = false;
+            Debug.Log($"Grounded: {isGrounded}. Name: {other.gameObject.name}");
         }
     }
 
     public void Move(InputAction.CallbackContext context) {
         actionName = context.action.name;
         actionPhase = context.action.phase;
-        Debug.Log(actionName);
-        Debug.Log(actionPhase);
+        // Debug.Log(actionName);
+        // Debug.Log(actionPhase);
         //  InputActionPhase is an enum with values:
         //      - Started = 2
         //      - Performed = 3 

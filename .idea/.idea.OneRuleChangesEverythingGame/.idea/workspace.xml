@@ -6,27 +6,31 @@
   <component name="ChangeListManager">
     <list default="true" id="5a4e12fc-386e-4c11-8ee5-0ecd9e671981" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OneRuleChangesEverythingGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneRuleChangesEverythingGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputSystem_Actions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InputSystem_Actions.inputactions" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TEST_SCENE.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TEST_SCENE.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SettingsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SettingsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/player.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/player.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/player.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/player.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/SceneTemplateSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/SceneTemplateSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Prefabs/Player.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameVariables.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SettingsController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem/InputSystem/Actions/InputAction.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal/Shaders/2D/Sprite-Lit-Default.shader" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Runtime/TMP/TMP_PackageResourceImporter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4369fda1a37e41c49e5bb0f1e909a9292e600/51/8af3d928/Rigidbody2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b5bf0c891ea345fe93688f835df32fdc1dda00/4b/7971a66e/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b5bf0c891ea345fe93688f835df32fdc1dda00/ae/459ac1d8/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -63,7 +67,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\6000.0.24f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\2023.2.13f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Games\OneRuleChangesEverythingGame -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Games\OneRuleChangesEverythingGame" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -71,7 +75,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\6000.0.24f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\2023.2.13f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Games\OneRuleChangesEverythingGame -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Games\OneRuleChangesEverythingGame" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -109,7 +113,8 @@
       <updated>1730026370771</updated>
       <workItem from="1730026373257" duration="11792000" />
       <workItem from="1730126463380" duration="15550000" />
-      <workItem from="1730366187330" duration="7856000" />
+      <workItem from="1730366187330" duration="7995000" />
+      <workItem from="1730380446912" duration="13474000" />
     </task>
     <task id="LOCAL−00001" summary="initial">
       <option name="closed" value="true" />
@@ -132,7 +137,14 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1730149329693</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="1. Added some sprites&#10;2. Some basic movement&#10;&#10;3. ----- IMPORTANT -----&#10;backup before reverting Unity version to 2023.2.13f1">
+      <option name="closed" value="true" />
+      <created>1730378021072</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1730378021072</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,6 +170,7 @@
     <MESSAGE value="initial" />
     <MESSAGE value="Menus WIP" />
     <MESSAGE value="settings menu WIP" />
-    <option name="LAST_COMMIT_MESSAGE" value="settings menu WIP" />
+    <MESSAGE value="1. Added some sprites&#10;2. Some basic movement&#10;&#10;3. ----- IMPORTANT -----&#10;backup before reverting Unity version to 2023.2.13f1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Added some sprites&#10;2. Some basic movement&#10;&#10;3. ----- IMPORTANT -----&#10;backup before reverting Unity version to 2023.2.13f1" />
   </component>
 </project>
