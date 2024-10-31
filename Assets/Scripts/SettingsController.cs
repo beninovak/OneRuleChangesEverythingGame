@@ -21,7 +21,7 @@ public class SettingsController : MonoBehaviour {
     }
 
     void Update() {
-        Debug.Log("UPDATING");
+        // Debug.Log("UPDATING");
         if (Input.GetKeyDown(KeyCode.Escape) && !isMainMenu) {
             Debug.Log("PRESSING ESCAPE");
             isGamePaused = !isGamePaused;
