@@ -1,0 +1,6 @@
+[PICK UP TYPES]
+    - Move = die
+    - Reverse gravity
+    - Player = circle
+    - Double jump ?
+    - Deadly obstacle != deadly

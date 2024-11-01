@@ -1,0 +1,414 @@
+fileFormatVersion: 2
+guid: 3ca221050a5458f40bd3303924ac26ec
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3854508995644004174
+    second: bad_is_good_1_scaled_0
+  - first:
+      213: -4368191955971232951
+    second: bad_is_good_1_scaled_1
+  - first:
+      213: 838555205868730037
+    second: bad_is_good_1_scaled_2
+  - first:
+      213: 8736745823881643413
+    second: bad_is_good_1_scaled_3
+  - first:
+      213: 8378097097263703421
+    second: bad_is_good_1_scaled_4
+  - first:
+      213: 8775243711866221443
+    second: bad_is_good_1_scaled_5
+  - first:
+      213: -8918911733983025080
+    second: bad_is_good_1_scaled_6
+  - first:
+      213: -2629322213180406649
+    second: bad_is_good_1_scaled_7
+  - first:
+      213: 7795125864018936614
+    second: bad_is_good_1_scaled_8
+  - first:
+      213: -8732828349347796153
+    second: bad_is_good_1_scaled_9
+  - first:
+      213: -4161081927901344182
+    second: bad_is_good_1_scaled_10
+  - first:
+      213: 764990947164774004
+    second: bad_is_good_1_scaled_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 512
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bad_is_good_1_scaled_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 455
+        width: 654
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b867139d78028ac0800000000000000
+      internalID: -3854508995644004174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad_is_good_1_scaled_1
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 53
+        width: 741
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94bad994f801163c0800000000000000
+      internalID: -4368191955971232951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad_is_good_1_scaled_2
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 455
+        width: 120
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b63c52548523ab00800000000000000
+      internalID: 838555205868730037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad_is_good_1_scaled_3
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 422
+        width: 101
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 595c75d99082f3970800000000000000
+      internalID: 8736745823881643413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad_is_good_1_scaled_4
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 424
+        width: 97
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d756220cbeaf44470800000000000000
+      internalID: 8378097097263703421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad_is_good_1_scaled_5
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 396
+        width: 72
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3833447a9ade7c970800000000000000
+      internalID: 8775243711866221443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad_is_good_1_scaled_6
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 398
+        width: 83
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 848e0e84809a93480800000000000000
+      internalID: -8918911733983025080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad_is_good_1_scaled_7
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 203
+        width: 89
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 784865bb065c28bd0800000000000000
+      internalID: -2629322213180406649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad_is_good_1_scaled_8
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 202
+        width: 89
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6230f484ca9dd2c60800000000000000
+      internalID: 7795125864018936614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad_is_good_1_scaled_9
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 173
+        width: 117
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74be9a082e2cec680800000000000000
+      internalID: -8732828349347796153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad_is_good_1_scaled_10
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 172
+        width: 91
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4e842e680ed046c0800000000000000
+      internalID: -4161081927901344182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad_is_good_1_scaled_11
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 1
+        width: 562
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47e552e963bcd9a00800000000000000
+      internalID: 764990947164774004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      bad_is_good_1_scaled_0: -3854508995644004174
+      bad_is_good_1_scaled_1: -4368191955971232951
+      bad_is_good_1_scaled_10: -4161081927901344182
+      bad_is_good_1_scaled_11: 764990947164774004
+      bad_is_good_1_scaled_2: 838555205868730037
+      bad_is_good_1_scaled_3: 8736745823881643413
+      bad_is_good_1_scaled_4: 8378097097263703421
+      bad_is_good_1_scaled_5: 8775243711866221443
+      bad_is_good_1_scaled_6: -8918911733983025080
+      bad_is_good_1_scaled_7: -2629322213180406649
+      bad_is_good_1_scaled_8: 7795125864018936614
+      bad_is_good_1_scaled_9: -8732828349347796153
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

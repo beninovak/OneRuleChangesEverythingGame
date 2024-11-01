@@ -6,14 +6,27 @@
   <component name="ChangeListManager">
     <list default="true" id="5a4e12fc-386e-4c11-8ee5-0ecd9e671981" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OneRuleChangesEverythingGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneRuleChangesEverythingGame/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Platform.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Platform.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/TEST_SCENE.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TEST_SCENE.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/SceneTemplateSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/SceneTemplateSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Abilities/gravity-reverse.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Abilities/gravity-reverse.svg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Abilities/london-tube.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Abilities/london-tube.svg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Abilities/square-circle-2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Abilities/square-circle-2.svg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Abilities/square-circle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Abilities/square-circle.svg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Abilities/time-skull.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Abilities/time-skull.svg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Abilities/water-lava.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Abilities/water-lava.svg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Abilities/ying-yang-arrows.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Abilities/ying-yang-arrows.svg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,13 +39,21 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Prefabs/Player.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PickUpController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameVariables.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SettingsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/ef03b3d050364d868640c193e219b45d1cba00/2d/c2db636a/020002F3.il" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/ef03b3d050364d868640c193e219b45d1cba00/2d/c2db636a/020002F3High.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/ef03b3d050364d868640c193e219b45d1cba00/2d/c2db636a/020002F3Low.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4369fda1a37e41c49e5bb0f1e909a9292e600/4c/cdcc5e4d/ForceMode2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4369fda1a37e41c49e5bb0f1e909a9292e600/51/8af3d928/Rigidbody2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b5bf0c891ea345fe93688f835df32fdc1dda00/4b/7971a66e/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b5bf0c891ea345fe93688f835df32fdc1dda00/ae/459ac1d8/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ef03b3d050364d868640c193e219b45d1cba00/24/c702a822/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ef03b3d050364d868640c193e219b45d1cba00/4e/1c78a786/Quaternion.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ef03b3d050364d868640c193e219b45d1cba00/ed/628a3bc3/Time.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="false" />
   <component name="ProjectColorInfo">{
@@ -114,7 +135,8 @@
       <workItem from="1730026373257" duration="11792000" />
       <workItem from="1730126463380" duration="15550000" />
       <workItem from="1730366187330" duration="7995000" />
-      <workItem from="1730380446912" duration="13474000" />
+      <workItem from="1730380446912" duration="13517000" />
+      <workItem from="1730444672778" duration="14135000" />
     </task>
     <task id="LOCAL−00001" summary="initial">
       <option name="closed" value="true" />
@@ -144,7 +166,14 @@
       <option name="presentableId" value="LOCAL−00004" />
       <updated>1730378021072</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL−00005" summary="movement WIP">
+      <option name="closed" value="true" />
+      <created>1730398239552</created>
+      <option name="number" value="LOCAL−00005" />
+      <option name="presentableId" value="LOCAL−00005" />
+      <updated>1730398239563</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,6 +200,7 @@
     <MESSAGE value="Menus WIP" />
     <MESSAGE value="settings menu WIP" />
     <MESSAGE value="1. Added some sprites&#10;2. Some basic movement&#10;&#10;3. ----- IMPORTANT -----&#10;backup before reverting Unity version to 2023.2.13f1" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Added some sprites&#10;2. Some basic movement&#10;&#10;3. ----- IMPORTANT -----&#10;backup before reverting Unity version to 2023.2.13f1" />
+    <MESSAGE value="movement WIP" />
+    <option name="LAST_COMMIT_MESSAGE" value="movement WIP" />
   </component>
 </project>
