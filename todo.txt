@@ -1,0 +1,5 @@
+- SET otherCanvas attribute on SettingsController on every scene
+- SET settingsController.RequestPauseUnpauseGame on PlayerInput component of Player prefab on every scene
+- ADJUST Pickup's durations
+- ADJUST audio/video menus to be anchored to some point
+- CHECK TODOS

@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -118,7 +118,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -140,10 +140,10 @@ MonoBehaviour:
   - type: 1
     title: Gravity is inverted
     sprite: {fileID: 21300000, guid: ee3b43b15acbba740b8eb28012e6ff1b, type: 3}
-    duration: 30
+    duration: 5
   - type: 2
     title: Bad = Good
     sprite: {fileID: 21300000, guid: 10762583c28ee214c86a0ea4a8083dd5, type: 3}
-    duration: 30
-  typeSelf: 0
+    duration: 5
+  typeSelf: 2
   gc: {fileID: 0}

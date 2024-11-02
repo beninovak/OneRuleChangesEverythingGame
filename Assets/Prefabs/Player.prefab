@@ -113,8 +113,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2703221536682125626}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: UseItem
-        m_Mode: 1
+        m_MethodName: Move
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -165,6 +165,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SettingsController, Assembly-CSharp
+        m_MethodName: RequestPauseUnpauseGame
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 278b0215-63e8-4f6b-98ab-7a6a87916985
+    m_ActionName: 'UI/OpenMenu[/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
@@ -182,7 +198,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a478715434bb3e34788f7d728ac23096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gc: {fileID: 0}
 --- !u!212 &6808649725413187879
 SpriteRenderer:
   m_ObjectHideFlags: 0

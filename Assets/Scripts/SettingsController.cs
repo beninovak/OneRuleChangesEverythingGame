@@ -1,84 +1,70 @@
 using System;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SettingsController : MonoBehaviour {
-    [SerializeField] private Slider masterVolumeSlider;
-    private GameObject currentPanel, previousPanel;
-    public GameObject mainMenuCanvas = null, settingsCanvas, settingsButtonPanel, audioPanel, videoPanel, goBackButton;
-    private Canvas settingsCanvasCanvas;
+    [SerializeField] 
+    private Slider      masterVolumeSlider;
+    private GameObject  currentPanel, 
+                        previousPanel;
+    public GameObject   otherCanvas = null, // When on main menu, this is the MainMenuCanvas, otherwise HUDCanvas 
+                        settingsCanvas, 
+                        settingsButtonPanel, 
+                        audioPanel, 
+                        videoPanel;
 
     public bool isMainMenu = false;
-
     private bool isGamePaused = false;
     
     private void Start() {
         AudioListener.volume = 0.5f;
         masterVolumeSlider.value = 0.5f;
-        settingsCanvasCanvas = settingsCanvas.GetComponent<Canvas>();
     }
 
-    void Update() {
-        // Debug.Log("UPDATING");
-        if (Input.GetKeyDown(KeyCode.Escape) && !isMainMenu) {
-            Debug.Log("PRESSING ESCAPE");
-            isGamePaused = !isGamePaused;
+    public void RequestPauseUnpauseGame(InputAction.CallbackContext context) {
+        if (context.phase == InputActionPhase.Started) {
             PauseUnpauseGame();
         }
     }
-    
-    private void PauseUnpauseGame () { // TODO - check why multiple pause/unpauses don't work
+
+    private void PauseUnpauseGame () {
+        isGamePaused = !isGamePaused;
         if (isGamePaused) {
-            Debug.Log("PAUSING GAME");
             Time.timeScale = 0f;
             OpenCloseSettings(true);
         } else {
-            Debug.Log("UNPAUSING GAME");
             Time.timeScale = 1f;
             OpenCloseSettings(false);
         }
     }
     
     public void OpenCloseSettings(bool open) {
+        settingsCanvas.SetActive(open);
+        // goBackButton.SetActive(open);
         if (open) {
-            settingsCanvas.SetActive(true);
-            settingsCanvasCanvas.enabled = true;
-            goBackButton.SetActive(true);
             currentPanel = settingsCanvas;
-            
-            if (isMainMenu) {
-                previousPanel = mainMenuCanvas; // TODO - asses if necessary
-                mainMenuCanvas.SetActive(false);
-            } else {
-                previousPanel = null;
-            }
-        } else {
-            settingsCanvas.SetActive(false);
-            goBackButton.SetActive(false);
-            
-            if (isMainMenu) {
-                mainMenuCanvas.SetActive(false);
-            }
+            previousPanel = isMainMenu ? otherCanvas : null;  // TODO - asses if necessary
         }
+        
+        otherCanvas.SetActive(!open);
     }
 
     public void GoBack() {
-        Debug.Log("Current: " + currentPanel);
-        Debug.Log("Previous: " + previousPanel);
+        // Debug.Log($"From: {currentPanel} to {previousPanel}: {previousPanel == null}");
         currentPanel.SetActive(false);
         
         if (isMainMenu) {
             previousPanel.SetActive(true);
-            if (previousPanel == mainMenuCanvas) {
+            if (previousPanel == otherCanvas) {
                 settingsCanvas.SetActive(false);
             } else if (previousPanel == settingsCanvas) {
-                previousPanel = mainMenuCanvas;
+                previousPanel = otherCanvas;
                 settingsButtonPanel.SetActive(true);
             }
         } else if (previousPanel == null || currentPanel == settingsCanvas) {
-            isGamePaused = false;
             PauseUnpauseGame();
         } else if (previousPanel != null) {
             previousPanel.SetActive(true);
@@ -101,8 +87,12 @@ public class SettingsController : MonoBehaviour {
         settingsButtonPanel.SetActive(false);
     }
 
+    // TODO - add to settings canvas
     public void BackToMainMenu() {
-        SceneManager.LoadScene("MainMenu");
+        GameVariables.SCENE_INDEX_TO_RESUME_FROM = SceneManager.GetActiveScene().buildIndex;
+        Debug.Log($"SAVING SCENE WITH INDEX {GameVariables.SCENE_INDEX_TO_RESUME_FROM}");
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(0);
     }
     
     public void AdjustVolume() {

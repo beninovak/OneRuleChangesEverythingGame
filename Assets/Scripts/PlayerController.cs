@@ -1,7 +1,4 @@
 using System;
-using System.Numerics;
-using Mono.Cecil.Cil;
-using NUnit.Framework.Constraints;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Quaternion = UnityEngine.Quaternion;
@@ -15,20 +12,15 @@ public class PlayerController : MonoBehaviour {
     private float   moveForce = 0.8f,
                     jumpForce = 10f,
                     zRotationDegrees = 0,
-                    rotationSpeed = 1f,
-                    rotationStep = 0f,
                     startingDrag;
-
-    private Quaternion rotationToMatch;
-
+    
     private bool    movingLeft = false, 
                     movingRight = false,
                     canMoveHorizontally = true,
                     canJump = true, 
                     wantsToJump = false, 
                     isFalling = false,
-                    isGrounded = true,
-                    shouldFixRotation = false;
+                    isGrounded = true;
 
     private Vector2 upVector = Vector2.up;
     private Vector2 rightVector = Vector2.right;
@@ -36,7 +28,7 @@ public class PlayerController : MonoBehaviour {
     private InputActionPhase actionPhase;
     
     // ------ Other ------ //
-    public GameController gc;
+    // public GameController gc;
     
     private string currentItem = "";
     private Rigidbody2D rb;
@@ -51,23 +43,6 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-
-        // if (shouldFixRotation) {
-        //     rotationStep = rotationSpeed * Time.deltaTime;
-        //     // Debug.Log($"ROTATING BY {rotationStep}");
-        //     transform.rotation = Quaternion.RotateTowards(transform.rotation, rotationToMatch, rotationStep);
-        //     Debug.Log(Quaternion.Angle(transform.rotation, rotationToMatch));
-        //     float rotationDiff = Quaternion.Angle(transform.rotation, rotationToMatch); 
-        //     if ((rotationDiff % 90f) < 1f || (rotationDiff % 90f) > 89f) {
-        //         Debug.Log("-----------------------------");
-        //         Debug.Log("--------DONE ROTATING--------");
-        //         Debug.Log("-----------------------------");
-        //         shouldFixRotation = false;
-        //         rotationToMatch = new Quaternion();
-        //     }
-        // }
-        
-        // Debug.Log(rb.velocityY);
         zRotationDegrees = transform.eulerAngles.z;
         // canMoveHorizontally = (isGrounded && zRotationDegrees < 15f || zRotationDegrees > 345f); // 0 degrees at top
         canMoveHorizontally = (isGrounded && zRotationDegrees < 45f || zRotationDegrees > 315f); // 0 degrees at top
@@ -93,8 +68,6 @@ public class PlayerController : MonoBehaviour {
             canJump = true;
             isGrounded = true;
             rb.drag = startingDrag;
-            shouldFixRotation = true;
-            rotationToMatch = other.gameObject.transform.rotation;
             // Debug.Log($"Grounded: {isGrounded}. Name: {other.gameObject.name}");
         }
     }
@@ -102,7 +75,6 @@ public class PlayerController : MonoBehaviour {
     private void OnCollisionExit2D(Collision2D other) {
         if (other.gameObject.CompareTag("Platform")) {
             isGrounded = false;
-            shouldFixRotation = false;
             // Debug.Log($"Grounded: {isGrounded}. Name: {other.gameObject.name}");
         }
     }
