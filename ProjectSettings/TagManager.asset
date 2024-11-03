@@ -12,6 +12,7 @@ TagManager:
   - SettingsCanvas
   - Platform
   - Pickup
+  - FinishLine
   layers:
   - Default
   - TransparentFX

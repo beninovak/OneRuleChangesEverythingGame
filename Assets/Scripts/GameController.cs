@@ -34,9 +34,17 @@ public class GameController : MonoBehaviour {
     private void Awake() {
         levelStartTimestamp = Time.time;
         // GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().gc = this;
+        
+        //  TODO - check if pickups and finishLines can be merged into a single array??
+        
         GameObject[] pickups = GameObject.FindGameObjectsWithTag("Pickup");
         foreach (GameObject pickup in pickups) {
             pickup.GetComponent<PickUpController>().gc = this;
+        }
+        
+        GameObject[] finishLines = GameObject.FindGameObjectsWithTag("FinishLine");
+        foreach (GameObject finishLine in finishLines) {
+            finishLine.GetComponent<FinishLineController>().gc = this;
         }
 
         levelNameBackgroundColorShown = levelNameBackgroundImage.color;
@@ -54,6 +62,10 @@ public class GameController : MonoBehaviour {
         if (hasActiveStatusEffect) {
             HUDFadeInOut("statusEffect");
         }
+    }
+
+    public void FinishLevel() {
+        Debug.Log("FINISH GAME");
     }
 
     private void HUDFadeInOut(string name) {
