@@ -94,7 +94,12 @@ public class SettingsController : MonoBehaviour {
 
     // TODO - add to settings canvas
     public void BackToMainMenu() {
-        GameVariables.SCENE_INDEX_TO_RESUME_FROM = SceneManager.GetActiveScene().buildIndex;
+
+        // Only remember last scene if its not the last one ( End_Scene )
+        if (SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCountInBuildSettings - 1) {
+            GameVariables.SCENE_INDEX_TO_RESUME_FROM = SceneManager.GetActiveScene().buildIndex;
+        }
+        
         Debug.Log($"SAVING SCENE WITH INDEX {GameVariables.SCENE_INDEX_TO_RESUME_FROM}");
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);

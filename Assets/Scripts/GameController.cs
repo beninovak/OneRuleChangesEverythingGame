@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static PickUpController;
 
@@ -12,6 +13,7 @@ public class GameController : MonoBehaviour {
     
     public GameObject      HUDCanvas;
     public Image           levelNameBackgroundImage;
+    public Image           finalTimeBackgroundImage;
 
     [HideInInspector]
     public PickUp          statusEffect;
@@ -19,19 +21,25 @@ public class GameController : MonoBehaviour {
     public TextMeshProUGUI statusEffectText;
     public TextMeshProUGUI statusEffectRemainingDurationText;
     public TextMeshProUGUI levelNameText;
+    public TextMeshProUGUI finalTimeText;
 
+    private bool           hasLevelFinished = false;
     private bool           shouldFadeLevelNameText = true; 
     private bool           hasActiveStatusEffect = false;
-    private float          timeSincePickup = 0f;
-    private float          pickupNotificationFadeDuration = 2f;
     private float          levelStartTimestamp;
+    private float          levelFinalTime;
+    private float          timeSincePickup = 0f;
+    private float          levelNameFadeDuration = 2f;
+    private float          pickupNotificationFadeDuration = 2f;
+    private float          timeAfterFinishBeforeSceneSwitch = 3f;
 
     private Color          HUDTextColorShown = new Color(1f, 1f, 1f, 1f);
     private Color          HUDTextColorHidden = new Color(1f, 1f, 1f, 0f);
-    private Color          levelNameBackgroundColorShown;
-    private Color          levelNameBackgroundColorHidden;
+    private Color          bigMessageBackgroundColorShown;
+    private Color          bigMessageBackgroundColorHidden;
     
     private void Awake() {
+        Debug.Log($"Previous best time: {GameVariables.SCENE_TIMES[SceneManager.GetActiveScene().buildIndex - 1]}");
         levelStartTimestamp = Time.time;
         // GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().gc = this;
         
@@ -47,8 +55,8 @@ public class GameController : MonoBehaviour {
             finishLine.GetComponent<FinishLineController>().gc = this;
         }
 
-        levelNameBackgroundColorShown = levelNameBackgroundImage.color;
-        levelNameBackgroundColorHidden = new Color(levelNameBackgroundColorShown.r, levelNameBackgroundColorShown.g, levelNameBackgroundColorShown.b, 0f);
+        bigMessageBackgroundColorShown = levelNameBackgroundImage.color;
+        bigMessageBackgroundColorHidden = new Color(bigMessageBackgroundColorShown.r, bigMessageBackgroundColorShown.g, bigMessageBackgroundColorShown.b, 0f);
         levelNameText.text = levelName;
         GameVariables.CURRENT_LEVEL_NAME = levelName;
     }
@@ -62,24 +70,39 @@ public class GameController : MonoBehaviour {
         if (hasActiveStatusEffect) {
             HUDFadeInOut("statusEffect");
         }
+
+        if (hasLevelFinished) {
+            HUDFadeInOut("finalTime");
+        }
     }
 
     public void FinishLevel() {
-        Debug.Log("FINISH GAME");
+        hasLevelFinished = true;
+        levelFinalTime = Time.time - levelStartTimestamp;
+        finalTimeText.text = $"{levelFinalTime:0.00}s";
+        GameVariables.SCENE_TIMES[SceneManager.GetActiveScene().buildIndex - 1] = levelFinalTime; // TODO - only for testing...store this in a file
+        
+        // TODO - Check final time against previous final time and show "gz" message in UI
+        
+        Invoke(nameof(LoadNextScene), timeAfterFinishBeforeSceneSwitch);
     }
 
-    private void HUDFadeInOut(string name) {
+    private void LoadNextScene() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    private void HUDFadeInOut(string name) { // TODO - maybe rename to something more sensible, given what the "statusEffect" case does
 
         switch (name) {
             
             case "levelName":
-                if (Time.time - 2f >= levelStartTimestamp) {
+                if (Time.time - levelNameFadeDuration >= levelStartTimestamp) {
                     shouldFadeLevelNameText = false;
                     levelNameText.color = new Color(1f, 1f, 1f, 0);
                     levelNameBackgroundImage.color = new Color(1f, 1f, 1f, 0);
                 } else {
-                    levelNameText.color = Color.Lerp(levelNameText.color, HUDTextColorHidden, pickupNotificationFadeDuration * Time.deltaTime);
-                    levelNameBackgroundImage.color = Color.Lerp(levelNameBackgroundImage.color, levelNameBackgroundColorHidden, pickupNotificationFadeDuration * Time.deltaTime);
+                    levelNameText.color = Color.Lerp(levelNameText.color, HUDTextColorHidden, levelNameFadeDuration * Time.deltaTime);
+                    levelNameBackgroundImage.color = Color.Lerp(levelNameBackgroundImage.color, bigMessageBackgroundColorHidden, levelNameFadeDuration * Time.deltaTime);
                 }
                 break;
             
@@ -103,6 +126,11 @@ public class GameController : MonoBehaviour {
                 } else {
                     statusEffectText.color = HUDTextColorHidden;
                 }
+                break;
+            
+            case "finalTime":
+                finalTimeText.color = Color.Lerp(finalTimeText.color, HUDTextColorShown, timeAfterFinishBeforeSceneSwitch * Time.deltaTime);
+                finalTimeBackgroundImage.color = Color.Lerp(finalTimeBackgroundImage.color, bigMessageBackgroundColorShown, timeAfterFinishBeforeSceneSwitch * Time.deltaTime);
                 break;
         }
     }
