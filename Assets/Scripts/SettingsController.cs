@@ -1,5 +1,6 @@
 using System;
 using System.Runtime.CompilerServices;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -16,12 +17,16 @@ public class SettingsController : MonoBehaviour {
                         audioPanel, 
                         videoPanel;
 
+    public TextMeshProUGUI levelNameText;
+
     public bool isMainMenu = false;
     private bool isGamePaused = false;
     
     private void Start() {
         AudioListener.volume = 0.5f;
         masterVolumeSlider.value = 0.5f;
+
+        levelNameText.text = GameVariables.CURRENT_LEVEL_NAME;
     }
 
     public void RequestPauseUnpauseGame(InputAction.CallbackContext context) {

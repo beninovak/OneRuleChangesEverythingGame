@@ -6,28 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="5a4e12fc-386e-4c11-8ee5-0ecd9e671981" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OneRuleChangesEverythingGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneRuleChangesEverythingGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputSystem_Actions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InputSystem_Actions.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PickUpController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PickUpController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PickUp.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PickUp.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SettingsCanvas.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SettingsCanvas.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GameController.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GameController.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SettingsUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/SettingsUI.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/TEST_SCENE.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TEST_SCENE.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameVariables.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameVariables.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SettingsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SettingsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRP.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/UniversalRP.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Abilities/bad_is_good_1_scaled.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Abilities/bad_is_good_1_scaled.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Abilities/bad_is_good_2_scaled.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Abilities/bad_is_good_2_scaled.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Abilities/double_jump_scaled.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Abilities/double_jump_scaled.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Abilities/gravity_reverse_scaled.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Abilities/gravity_reverse_scaled.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Abilities/move_or_die.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Abilities/move_or_die.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Abilities/water_is_laval.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Abilities/water_is_laval.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/todo.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +29,10 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/PickUpController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Prefabs/PickUp.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Prefabs/Player.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scenes/MainMenu.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scenes/TEST_SCENE.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scripts/GameController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameVariables.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scripts/GameVariables.cs" root0="SKIP_HIGHLIGHTING" />
@@ -50,6 +42,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SettingsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scripts/SettingsController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scripts/SettingsController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scripts/SettingsController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Settings/UniversalRP.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Sprites/Abilities/bad_is_good_1_scaled.png.meta" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Sprites/Abilities/double_jump_scaled.png.meta" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Sprites/Abilities/gravity_reverse_scaled.png.meta" root0="SKIP_HIGHLIGHTING" />
@@ -163,7 +157,8 @@
       <workItem from="1730380446912" duration="13517000" />
       <workItem from="1730444672778" duration="14788000" />
       <workItem from="1730536127616" duration="16181000" />
-      <workItem from="1730577534152" duration="2770000" />
+      <workItem from="1730577534152" duration="2821000" />
+      <workItem from="1730622813439" duration="7006000" />
     </task>
     <task id="LOCAL−00001" summary="initial">
       <option name="closed" value="true" />
@@ -207,7 +202,14 @@
       <option name="presentableId" value="LOCAL−00006" />
       <updated>1730468867562</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL−00007" summary="1. UI now shows active Pickup &#10;2. Settings menus now actually work&#10;3. Added option to return to main menu from settings - when doing this, the game will remember where to continue from ( while the game is open ) &#10;4. Pausing and un-pausing now work">
+      <option name="closed" value="true" />
+      <created>1730580358004</created>
+      <option name="number" value="LOCAL−00007" />
+      <option name="presentableId" value="LOCAL−00007" />
+      <updated>1730580358004</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,6 +238,7 @@
     <MESSAGE value="1. Added some sprites&#10;2. Some basic movement&#10;&#10;3. ----- IMPORTANT -----&#10;backup before reverting Unity version to 2023.2.13f1" />
     <MESSAGE value="movement WIP" />
     <MESSAGE value="Pickups prototype" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pickups prototype" />
+    <MESSAGE value="1. UI now shows active Pickup &#10;2. Settings menus now actually work&#10;3. Added option to return to main menu from settings - when doing this, the game will remember where to continue from ( while the game is open ) &#10;4. Pausing and un-pausing now work" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. UI now shows active Pickup &#10;2. Settings menus now actually work&#10;3. Added option to return to main menu from settings - when doing this, the game will remember where to continue from ( while the game is open ) &#10;4. Pausing and un-pausing now work" />
   </component>
 </project>

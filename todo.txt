@@ -1,3 +1,5 @@
+- MAKE MainCamera child of Player
+- MAKE an option for defining the type of an instantiated Pickup ( called after Awake but before Start ?? )
 - SET otherCanvas attribute on SettingsController on every scene
 - SET settingsController.RequestPauseUnpauseGame on PlayerInput component of Player prefab on every scene
 - ADJUST Pickup's durations

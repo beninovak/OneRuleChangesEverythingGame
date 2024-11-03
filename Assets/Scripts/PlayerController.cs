@@ -1,22 +1,22 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Quaternion = UnityEngine.Quaternion;
-using Vector2 = UnityEngine.Vector2;
 
 public class PlayerController : MonoBehaviour {
     
     // ------ Movement variables ------ //
     private string  actionName;
 
-    private float   moveForce = 0.8f,
-                    jumpForce = 10f,
-                    zRotationDegrees = 0,
-                    startingDrag;
+    // TODO - make all these private
+    public float   moveForce = 0.8f,
+                    jumpForce = 23f, // 23f enables jumps of height 3, but not 3.1
+                    startingDrag,
+                    startingGravityScale,
+                    fallingGravityScaleMultiplier,
+                    timeFalling = 0f;
     
     private bool    movingLeft = false, 
                     movingRight = false,
-                    canMoveHorizontally = true,
                     canJump = true, 
                     wantsToJump = false, 
                     isFalling = false,
@@ -34,23 +34,20 @@ public class PlayerController : MonoBehaviour {
     private Rigidbody2D rb;
     
     private void Start() {
-        // Time.timeScale = 0.1f;
-        // Physics.defaultContactOffset = 0.1f;
-        
-        // Debug.Log(Physics.defaultContactOffset);
         rb = GetComponent<Rigidbody2D>();
         startingDrag = rb.drag;
+        startingGravityScale = rb.gravityScale;
     }
 
     private void FixedUpdate() {
-        zRotationDegrees = transform.eulerAngles.z;
-        // canMoveHorizontally = (isGrounded && zRotationDegrees < 15f || zRotationDegrees > 345f); // 0 degrees at top
-        canMoveHorizontally = (isGrounded && zRotationDegrees < 45f || zRotationDegrees > 315f); // 0 degrees at top
 
-        if (movingRight && canMoveHorizontally) {
+        // Debug.Log(rb.velocityX);
+        if (movingRight) {
             rb.AddForce(rightVector * moveForce, ForceMode2D.Impulse);
-        } else if (movingLeft && canMoveHorizontally) {
+        } else if (movingLeft) {
             rb.AddForce(-rightVector * moveForce, ForceMode2D.Impulse);
+        } else {
+            rb.velocityX = 0f;
         }
 
         if (wantsToJump && canJump) {
@@ -60,24 +57,32 @@ public class PlayerController : MonoBehaviour {
         }
         
         isFalling = rb.velocityY < 0f;
-        rb.drag = isGrounded ? startingDrag : 0f;
+        rb.drag = !isFalling ? startingDrag : 0f;
+
+        if (isFalling) {
+            timeFalling += Time.deltaTime; // TODO - this shouldn't happen in gravity scale is negative ( gravity is inverted )
+            rb.gravityScale += fallingGravityScaleMultiplier * Time.deltaTime;
+        } else {
+            timeFalling = 0f;
+            rb.gravityScale = startingGravityScale;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
         if (isFalling && other.gameObject.CompareTag("Platform")) {
             canJump = true;
-            isGrounded = true;
-            rb.drag = startingDrag;
+            // isGrounded = true;
+            // rb.drag = startingDrag;
             // Debug.Log($"Grounded: {isGrounded}. Name: {other.gameObject.name}");
         }
     }
 
-    private void OnCollisionExit2D(Collision2D other) {
-        if (other.gameObject.CompareTag("Platform")) {
-            isGrounded = false;
-            // Debug.Log($"Grounded: {isGrounded}. Name: {other.gameObject.name}");
-        }
-    }
+    // private void OnCollisionExit2D(Collision2D other) {
+    //     if (other.gameObject.CompareTag("Platform")) {
+    //         isGrounded = false;
+    //         // Debug.Log($"Grounded: {isGrounded}. Name: {other.gameObject.name}");
+    //     }
+    // }
 
     public void Move(InputAction.CallbackContext context) {
         actionName = context.action.name;
