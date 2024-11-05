@@ -100,7 +100,7 @@ public class SettingsController : MonoBehaviour {
             GameVariables.SCENE_INDEX_TO_RESUME_FROM = SceneManager.GetActiveScene().buildIndex;
         }
         
-        Debug.Log($"SAVING SCENE WITH INDEX {GameVariables.SCENE_INDEX_TO_RESUME_FROM}");
+        // Debug.Log($"SAVING SCENE WITH INDEX {GameVariables.SCENE_INDEX_TO_RESUME_FROM}");
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }

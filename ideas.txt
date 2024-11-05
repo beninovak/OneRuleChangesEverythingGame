@@ -1,6 +1,9 @@
+[GENERAL]
+- Risky finishes ( TM style )
+
 [PICK UP TYPES]
-    - Move = die
-    - Reverse gravity
-    - Player = circle
-    - Double jump ?
-    - Deadly obstacle != deadly
+- Move = die
+- Reverse gravity
+- Player = circle
+- Double jump ?
+- Deadly obstacle != deadly

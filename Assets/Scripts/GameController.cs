@@ -21,6 +21,7 @@ public class GameController : MonoBehaviour {
     public TextMeshProUGUI statusEffectText;
     public TextMeshProUGUI statusEffectRemainingDurationText;
     public TextMeshProUGUI levelNameText;
+    public TextMeshProUGUI levelTimeText;
     public TextMeshProUGUI finalTimeText;
 
     private bool           hasLevelFinished = false;
@@ -39,12 +40,12 @@ public class GameController : MonoBehaviour {
     private Color          bigMessageBackgroundColorHidden;
     
     private void Awake() {
-        Debug.Log($"Previous best time: {GameVariables.SCENE_TIMES[SceneManager.GetActiveScene().buildIndex - 1]}");
+        // Debug.Log($"Previous best time: {GameVariables.SCENE_TIMES[SceneManager.GetActiveScene().buildIndex - 1]}");
         levelStartTimestamp = Time.time;
         // GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().gc = this;
         
-        //  TODO - check if pickups and finishLines can be merged into a single array??
         
+        //  TODO - check if pickups and finishLines can be merged into a single array??
         GameObject[] pickups = GameObject.FindGameObjectsWithTag("Pickup");
         foreach (GameObject pickup in pickups) {
             pickup.GetComponent<PickUpController>().gc = this;
@@ -66,13 +67,15 @@ public class GameController : MonoBehaviour {
         if (shouldFadeLevelNameText) {
             HUDFadeInOut("levelName");
         }
-        
-        if (hasActiveStatusEffect) {
-            HUDFadeInOut("statusEffect");
-        }
 
         if (hasLevelFinished) {
             HUDFadeInOut("finalTime");
+        } else {
+            levelTimeText.text = $"{Time.time - levelStartTimestamp:0.00}s";
+            
+            if (hasActiveStatusEffect) {
+                HUDFadeInOut("statusEffect");
+            }
         }
     }
 

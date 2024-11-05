@@ -175,6 +175,10 @@ PrefabInstance:
       propertyPath: m_text
       value: THE END
       objectReference: {fileID: 0}
+    - target: {fileID: 7733313395332835794, guid: 59f83de7710d26146a9712079193814a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8680984291867451882, guid: 59f83de7710d26146a9712079193814a, type: 3}
       propertyPath: m_Name
       value: SettingsUI

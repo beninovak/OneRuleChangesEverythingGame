@@ -4,4 +4,7 @@
 - SET settingsController.RequestPauseUnpauseGame on PlayerInput component of Player prefab on every scene
 - ADJUST Pickup's durations
 - ADJUST audio/video menus to be anchored to some point
+- MAKE a quick fade in graphic for showing controls in HUD
+- ADD SuicideNet to every level
+- ADD FinishLine particle effects on finish
 - CHECK TODOS

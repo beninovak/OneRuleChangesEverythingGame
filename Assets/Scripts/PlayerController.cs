@@ -29,7 +29,8 @@ public class PlayerController : MonoBehaviour {
     
     // ------ Other ------ //
     // public GameController gc;
-    
+
+    private Vector2 startingPosition;
     private string currentItem = "";
     private Rigidbody2D rb;
     
@@ -37,6 +38,7 @@ public class PlayerController : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         startingDrag = rb.drag;
         startingGravityScale = rb.gravityScale;
+        startingPosition = transform.position;
     }
 
     private void FixedUpdate() {
@@ -68,6 +70,12 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.CompareTag("SuicideNet")) {
+            gameObject.transform.position = startingPosition;
+        }
+    }
+    
     private void OnCollisionEnter2D(Collision2D other) {
         if (isFalling && other.gameObject.CompareTag("Platform")) {
             canJump = true;
