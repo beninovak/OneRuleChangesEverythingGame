@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c08d684d9281e234dac51d3b3c62417e
+guid: a370b6bd813883647b7e3ede742fbed1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6977539325359618099
-    second: move_or_die_0
+      213: -603231003055993990
+    second: move_or_die_scaled_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -24,7 +24,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 1
+  isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: move_or_die_0
+      name: move_or_die_scaled_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1024
-        height: 1024
+        width: 512
+        height: 520
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dc70f91c3fcca2f90800000000000000
-      internalID: -6977539325359618099
+      spriteID: a7b48594994e0a7f0800000000000000
+      internalID: -603231003055993990
       vertices: []
       indices: 
       edges: []
@@ -131,7 +131,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      move_or_die_0: -6977539325359618099
+      move_or_die_scaled_0: -603231003055993990
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

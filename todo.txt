@@ -7,4 +7,7 @@
 - MAKE a quick fade in graphic for showing controls in HUD
 - ADD SuicideNet to every level
 - ADD FinishLine particle effects on finish
+- ADD particle effects on Player ( landing on ground, dying, etc. )
+- ADD level select in MainMenu
+- SET level names on all GameControllers
 - CHECK TODOS

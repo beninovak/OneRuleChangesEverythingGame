@@ -15,6 +15,7 @@ TagManager:
   - FinishLine
   - SuicideNet
   - Wall
+  - Spike
   layers:
   - Default
   - TransparentFX

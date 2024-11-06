@@ -8,17 +8,17 @@ public class PlayerController : MonoBehaviour {
     private string  actionName;
 
     // TODO - make all these private
-    public float   moveForce = 0.8f,
+    public float    moveForce = 0.8f,
                     jumpForce = 23f, // 23f enables jumps of height 3, but not 3.1
                     startingDrag,
                     startingGravityScale,
                     fallingGravityScaleMultiplier,
                     timeFalling = 0f;
     
-    private bool    movingLeft = false, 
+    private bool    canJump = true,
+                    movingLeft = false,
                     movingRight = false,
-                    canJump = true, 
-                    wantsToJump = false, 
+                    wantsToJump = false,
                     isFalling = false,
                     isGrounded = true;
 
@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour {
     private InputActionPhase actionPhase;
     
     // ------ Other ------ //
-    // public GameController gc;
+    public GameController gc;
 
     private Vector2 startingPosition;
     private string currentItem = "";
@@ -42,8 +42,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-
-        // Debug.Log(rb.velocityX);
+        
         if (movingRight) {
             rb.AddForce(rightVector * moveForce, ForceMode2D.Impulse);
         } else if (movingLeft) {
@@ -71,8 +70,17 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.CompareTag("SuicideNet")) {
-            gameObject.transform.position = startingPosition;
+        string colliderTag = other.gameObject.tag;
+        switch (colliderTag) {
+            
+            case "Spike":
+                Destroy(other.gameObject);
+                Die();
+                break;
+            
+            case "SuicideNet":
+                gameObject.transform.position = startingPosition;
+                break;
         }
     }
     
@@ -91,7 +99,12 @@ public class PlayerController : MonoBehaviour {
     //         // Debug.Log($"Grounded: {isGrounded}. Name: {other.gameObject.name}");
     //     }
     // }
-
+    
+    private void Die() {
+        gc.KillPlayer();
+        Destroy(gameObject);
+    }
+    
     public void Move(InputAction.CallbackContext context) {
         actionName = context.action.name;
         actionPhase = context.action.phase;
@@ -137,6 +150,10 @@ public class PlayerController : MonoBehaviour {
                 // canJump = true; // TODO Set this to false when player falls back to the ground 
                 // break;
         }
+    }
+
+    public void DisableMovement() {
+        gameObject.GetComponent<PlayerInput>().enabled = false;
     }
 
     public void UseItem() {

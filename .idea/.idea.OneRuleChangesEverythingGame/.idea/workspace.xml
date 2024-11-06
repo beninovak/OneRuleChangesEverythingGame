@@ -8,19 +8,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OneRuleChangesEverythingGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneRuleChangesEverythingGame/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GameController.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GameController.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/__SettingsCanvas.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/__SettingsCanvas.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/End_Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/End_Scene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/TEST_SCENE.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TEST_SCENE.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SettingsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SettingsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Abilities/move_or_die.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Abilities/move_or_die.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ideas.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ideas.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/todo.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,14 +28,13 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scripts/FinishLineController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scripts/FinishLineController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scripts/GameController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scripts/GameVariables.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameVariables.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scripts/MainMenu.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scripts/SettingsController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scripts/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SettingsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scripts/SettingsController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.11.1/InputSystem/Plugins/PlayerInput/PlayerInput.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Runtime/UGUI/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/ef03b3d050364d868640c193e219b45d1cba00/2d/c2db636a/020002F3.il" root0="SKIP_HIGHLIGHTING" />
@@ -153,7 +146,8 @@
       <workItem from="1730577534152" duration="2821000" />
       <workItem from="1730622813439" duration="9924000" />
       <workItem from="1730652707157" duration="4314000" />
-      <workItem from="1730815044093" duration="4180000" />
+      <workItem from="1730815044093" duration="4907000" />
+      <workItem from="1730909201828" duration="6076000" />
     </task>
     <task id="LOCAL−00001" summary="initial">
       <option name="closed" value="true" />
@@ -225,7 +219,14 @@
       <option name="presentableId" value="LOCAL−00010" />
       <updated>1730658845381</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL−00011" summary="1. Added clock&#10;2. Added SuicideNet for respawning">
+      <option name="closed" value="true" />
+      <created>1730838674848</created>
+      <option name="number" value="LOCAL−00011" />
+      <option name="presentableId" value="LOCAL−00011" />
+      <updated>1730838674849</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,6 +267,7 @@
     <MESSAGE value="1. Changed player movement WIP&#10;2. Added level name overlay that fades out when level starts&#10;3. Added level name to settings menu&#10;4. Simplified HUD fade in and out" />
     <MESSAGE value="Finish line prefab WIP" />
     <MESSAGE value="1. Flag prefab now ends game, switching to next level&#10;2. Game remembers previous best level times" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Flag prefab now ends game, switching to next level&#10;2. Game remembers previous best level times" />
+    <MESSAGE value="1. Added clock&#10;2. Added SuicideNet for respawning" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Added clock&#10;2. Added SuicideNet for respawning" />
   </component>
 </project>

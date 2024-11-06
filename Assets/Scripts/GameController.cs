@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour {
     public TextMeshProUGUI levelNameText;
     public TextMeshProUGUI levelTimeText;
     public TextMeshProUGUI finalTimeText;
+    public GameObject      mainMessage;
 
     private bool           hasLevelFinished = false;
     private bool           shouldFadeLevelNameText = true; 
@@ -38,12 +39,14 @@ public class GameController : MonoBehaviour {
     private Color          HUDTextColorHidden = new Color(1f, 1f, 1f, 0f);
     private Color          bigMessageBackgroundColorShown;
     private Color          bigMessageBackgroundColorHidden;
+
+    private PlayerController playerController;
     
     private void Awake() {
         // Debug.Log($"Previous best time: {GameVariables.SCENE_TIMES[SceneManager.GetActiveScene().buildIndex - 1]}");
         levelStartTimestamp = Time.time;
-        // GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().gc = this;
-        
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>(); 
+        playerController.gc = this;
         
         //  TODO - check if pickups and finishLines can be merged into a single array??
         GameObject[] pickups = GameObject.FindGameObjectsWithTag("Pickup");
@@ -79,7 +82,19 @@ public class GameController : MonoBehaviour {
         }
     }
 
+    public void KillPlayer() {
+        mainMessage.GetComponent<TextMeshProUGUI>().text = "YOU DIED";
+        mainMessage.SetActive(true);
+        
+        Invoke(nameof(ResetLevel), 2f);
+    }
+
+    private void ResetLevel() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void FinishLevel() {
+        playerController.DisableMovement();
         hasLevelFinished = true;
         levelFinalTime = Time.time - levelStartTimestamp;
         finalTimeText.text = $"{levelFinalTime:0.00}s";
