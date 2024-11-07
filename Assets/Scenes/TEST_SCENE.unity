@@ -461,11 +461,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 48646736069344604, guid: 1c166fa092660a44a90397039eb196a2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.72
+      value: -15.62
       objectReference: {fileID: 0}
     - target: {fileID: 48646736069344604, guid: 1c166fa092660a44a90397039eb196a2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.16
+      value: 5.18
       objectReference: {fileID: 0}
     - target: {fileID: 48646736069344604, guid: 1c166fa092660a44a90397039eb196a2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -502,6 +502,22 @@ PrefabInstance:
     - target: {fileID: 817637561671913999, guid: 1c166fa092660a44a90397039eb196a2, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2703221536682125626, guid: 1c166fa092660a44a90397039eb196a2, type: 3}
+      propertyPath: moveForce
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2703221536682125626, guid: 1c166fa092660a44a90397039eb196a2, type: 3}
+      propertyPath: moveForceAirborne
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2703221536682125626, guid: 1c166fa092660a44a90397039eb196a2, type: 3}
+      propertyPath: moveForceGrounded
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2703221536682125626, guid: 1c166fa092660a44a90397039eb196a2, type: 3}
+      propertyPath: fallingGravityScaleMultiplier
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7456716923874600940, guid: 1c166fa092660a44a90397039eb196a2, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -815,11 +831,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3978411947638434353, guid: a92f39d0db5f02a4183aca29c89eae15, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.41
+      value: -6.77
       objectReference: {fileID: 0}
     - target: {fileID: 3978411947638434353, guid: a92f39d0db5f02a4183aca29c89eae15, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.25
+      value: 10.04
       objectReference: {fileID: 0}
     - target: {fileID: 3978411947638434353, guid: a92f39d0db5f02a4183aca29c89eae15, type: 3}
       propertyPath: m_LocalPosition.z

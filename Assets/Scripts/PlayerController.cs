@@ -8,7 +8,8 @@ public class PlayerController : MonoBehaviour {
     private string  actionName;
 
     // TODO - make all these private
-    public float    moveForce = 0.8f,
+    public float    moveForceGrounded = 1.3f,
+                    moveForceAirborne = 0.1f,
                     jumpForce = 23f, // 23f enables jumps of height 3, but not 3.1
                     startingDrag,
                     startingGravityScale,
@@ -44,9 +45,9 @@ public class PlayerController : MonoBehaviour {
     private void FixedUpdate() {
         
         if (movingRight) {
-            rb.AddForce(rightVector * moveForce, ForceMode2D.Impulse);
+            rb.AddForce(rightVector * (isGrounded ? moveForceGrounded: moveForceAirborne), ForceMode2D.Impulse);
         } else if (movingLeft) {
-            rb.AddForce(-rightVector * moveForce, ForceMode2D.Impulse);
+            rb.AddForce(-rightVector * (isGrounded ? moveForceGrounded: moveForceAirborne), ForceMode2D.Impulse);
         } else {
             rb.velocityX = 0f;
         }
@@ -87,6 +88,7 @@ public class PlayerController : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D other) {
         if (isFalling && other.gameObject.CompareTag("Platform")) {
             canJump = true;
+            rb.velocityX = 0f;
             // isGrounded = true;
             // rb.drag = startingDrag;
             // Debug.Log($"Grounded: {isGrounded}. Name: {other.gameObject.name}");
