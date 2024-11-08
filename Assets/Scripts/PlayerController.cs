@@ -23,7 +23,6 @@ public class PlayerController : MonoBehaviour {
                     isFalling = false,
                     isGrounded = true;
 
-    private Vector2 upVector = Vector2.up;
     private Vector2 rightVector = Vector2.right;
     
     private InputActionPhase actionPhase;
@@ -34,6 +33,7 @@ public class PlayerController : MonoBehaviour {
     private Vector2 startingPosition;
     private string currentItem = "";
     private Rigidbody2D rb;
+    private bool gravityDirection = true; // true for down, false for up
     
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
@@ -43,7 +43,6 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        
         if (movingRight) {
             rb.AddForce(rightVector * (isGrounded ? moveForceGrounded: moveForceAirborne), ForceMode2D.Impulse);
         } else if (movingLeft) {
@@ -55,10 +54,11 @@ public class PlayerController : MonoBehaviour {
         if (wantsToJump && canJump) {
             canJump = false;
             wantsToJump = false;
-            rb.AddForce(upVector * jumpForce, ForceMode2D.Impulse);
+            rb.AddForce((gc.isGravityReversed ? Vector2.down : Vector2.up) * jumpForce, ForceMode2D.Impulse);
         }
-        
-        isFalling = rb.velocityY < 0f;
+
+        float velocityY = rb.velocityY;
+        isFalling = (!gc.isGravityReversed && velocityY < 0f) || (gc.isGravityReversed && velocityY > 0f);
         rb.drag = !isFalling ? startingDrag : 0f;
 
         if (isFalling) {
@@ -73,12 +73,6 @@ public class PlayerController : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other) {
         string colliderTag = other.gameObject.tag;
         switch (colliderTag) {
-            
-            case "Spike":
-                Destroy(other.gameObject);
-                Die();
-                break;
-            
             case "SuicideNet":
                 gameObject.transform.position = startingPosition;
                 break;
@@ -86,13 +80,32 @@ public class PlayerController : MonoBehaviour {
     }
     
     private void OnCollisionEnter2D(Collision2D other) {
-        if (isFalling && other.gameObject.CompareTag("Platform")) {
-            canJump = true;
-            rb.velocityX = 0f;
-            // isGrounded = true;
-            // rb.drag = startingDrag;
-            // Debug.Log($"Grounded: {isGrounded}. Name: {other.gameObject.name}");
+        string colliderTag = other.gameObject.tag;
+
+        switch (colliderTag) {
+            case "Platform":
+            case "Ceiling":
+                if (isFalling) {
+                    canJump = true;
+                    rb.velocityX = 0f;
+                }
+                break;
+            
+            case "Spike":
+                if (!gc.isBadGood) {
+                    Destroy(other.gameObject);
+                    Die();
+                }
+                break;
         }
+        
+        // if (isFalling && other.gameObject.CompareTag("Platform")) {
+        //     canJump = true;
+        //     rb.velocityX = 0f;
+        //     // isGrounded = true;
+        //     // rb.drag = startingDrag;
+        //     // Debug.Log($"Grounded: {isGrounded}. Name: {other.gameObject.name}");
+        // }
     }
 
     // private void OnCollisionExit2D(Collision2D other) {
@@ -147,6 +160,8 @@ public class PlayerController : MonoBehaviour {
             case ("Jump", InputActionPhase.Canceled):
                 wantsToJump = false;
                 break;
+            
+            // TODO - "JumpDown" case??? Consider...
             
             // case ("Jump", InputActionPhase.Canceled):
                 // canJump = true; // TODO Set this to false when player falls back to the ground 

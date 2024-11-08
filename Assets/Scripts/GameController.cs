@@ -40,13 +40,21 @@ public class GameController : MonoBehaviour {
     private Color          bigMessageBackgroundColorShown;
     private Color          bigMessageBackgroundColorHidden;
 
-    private PlayerController playerController;
+    private GameObject player;
+    private PlayerController pc;
+    private Rigidbody2D pcRb;
+
+    /* Status effects */
+    public bool isGravityReversed = false; 
+    public bool isBadGood = false; 
     
     private void Awake() {
         // Debug.Log($"Previous best time: {GameVariables.SCENE_TIMES[SceneManager.GetActiveScene().buildIndex - 1]}");
         levelStartTimestamp = Time.time;
-        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>(); 
-        playerController.gc = this;
+        player = GameObject.FindGameObjectWithTag("Player");
+        pc = player.GetComponent<PlayerController>();
+        pc.gc = this;
+        pcRb = pc.GetComponent<Rigidbody2D>();
         
         //  TODO - check if pickups and finishLines can be merged into a single array??
         GameObject[] pickups = GameObject.FindGameObjectsWithTag("Pickup");
@@ -94,7 +102,7 @@ public class GameController : MonoBehaviour {
     }
 
     public void FinishLevel() {
-        playerController.DisableMovement();
+        pc.DisableMovement();
         hasLevelFinished = true;
         levelFinalTime = Time.time - levelStartTimestamp;
         finalTimeText.text = $"{levelFinalTime:0.00}s";
@@ -160,6 +168,16 @@ public class GameController : MonoBehaviour {
         statusEffectImage.texture = ConvertSpriteToTexture2D(effect.sprite);
         statusEffectImage.color = new Color(1f, 1f, 1f, 1f);
         statusEffectText.text = effect.title;
+
+        switch (effect.type) {
+            case PICK_UP_TYPES.REVERSE_GRAVITY:
+                ReverseGravity();
+                break;
+            
+            case PICK_UP_TYPES.BAD_IS_GOOD:
+                isBadGood = true;
+                break;
+        }
     }
 
     private void RemoveStatusEffect() {
@@ -169,8 +187,27 @@ public class GameController : MonoBehaviour {
         statusEffectImage.texture = null;
         statusEffectImage.color = new Color(1f, 1f, 1f, 0f);
         statusEffectRemainingDurationText.text = string.Empty;
+        
+        switch (statusEffect.type) {
+            case PICK_UP_TYPES.REVERSE_GRAVITY:
+                ReverseGravity();
+                break;
+            
+            case PICK_UP_TYPES.BAD_IS_GOOD:
+                // TODO - Check if touching spike here...kill player if so
+                isBadGood = false;
+                break;
+        }
     }
 
+    private void ReverseGravity() {
+        isGravityReversed = !isGravityReversed;
+        // Physics.gravity = (direction ? Vector2.down : Vector2.up) * Physics.gravity.magnitude;
+        // pcRb.gravityScale = pc.startingGravityScale * -1;
+        pc.startingGravityScale *= -1;
+        pc.fallingGravityScaleMultiplier *= -1;
+    }
+    
     private Texture2D ConvertSpriteToTexture2D(Sprite sprite) {
         var texture = new Texture2D((int)sprite.rect.width, (int)sprite.rect.height);
         

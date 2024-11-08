@@ -6,8 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="5a4e12fc-386e-4c11-8ee5-0ecd9e671981" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OneRuleChangesEverythingGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneRuleChangesEverythingGame/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InputSystem_Actions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InputSystem_Actions.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PickUp.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PickUp.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spikes.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spikes.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_3.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/TEST_SCENE.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TEST_SCENE.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PickUpController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PickUpController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,15 +31,10 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scenes/Level_1.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scripts/GameController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scripts/GameController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameVariables.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scripts/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scripts/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scripts/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SettingsController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.11.1/InputSystem/Plugins/PlayerInput/PlayerInput.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Runtime/UGUI/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/ef03b3d050364d868640c193e219b45d1cba00/2d/c2db636a/020002F3.il" root0="SKIP_HIGHLIGHTING" />
@@ -142,7 +148,8 @@
       <workItem from="1730652707157" duration="4314000" />
       <workItem from="1730815044093" duration="4907000" />
       <workItem from="1730909201828" duration="6244000" />
-      <workItem from="1731000667547" duration="3571000" />
+      <workItem from="1731000667547" duration="3779000" />
+      <workItem from="1731076994037" duration="6542000" />
     </task>
     <task id="LOCAL−00001" summary="initial">
       <option name="closed" value="true" />
@@ -228,7 +235,14 @@
       <option name="presentableId" value="LOCAL−00012" />
       <updated>1730921230967</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL−00013" summary="movement testing">
+      <option name="closed" value="true" />
+      <created>1731008054326</created>
+      <option name="number" value="LOCAL−00013" />
+      <option name="presentableId" value="LOCAL−00013" />
+      <updated>1731008054326</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,6 +285,7 @@
     <MESSAGE value="1. Flag prefab now ends game, switching to next level&#10;2. Game remembers previous best level times" />
     <MESSAGE value="1. Added clock&#10;2. Added SuicideNet for respawning" />
     <MESSAGE value="1. Spikes prefab&#10;2. Some levels&#10;3. Die message" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Spikes prefab&#10;2. Some levels&#10;3. Die message" />
+    <MESSAGE value="movement testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="movement testing" />
   </component>
 </project>

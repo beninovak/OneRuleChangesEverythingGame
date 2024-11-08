@@ -16,6 +16,7 @@ TagManager:
   - SuicideNet
   - Wall
   - Spike
+  - Ceiling
   layers:
   - Default
   - TransparentFX

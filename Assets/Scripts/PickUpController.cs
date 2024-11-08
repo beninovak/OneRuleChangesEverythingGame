@@ -9,8 +9,8 @@ public class PickUpController : MonoBehaviour {
 
     public enum PICK_UP_TYPES {
         NONE,
-        INVERT_GRAVITY,
         BAD_IS_GOOD, 
+        REVERSE_GRAVITY,
     };
     
     [Serializable]
