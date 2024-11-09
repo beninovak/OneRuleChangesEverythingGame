@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a4e12fc-386e-4c11-8ee5-0ecd9e671981" name="Changes" comment="">
+    <list default="true" id="5a4e12fc-386e-4c11-8ee5-0ecd9e671981" name="Changes" comment="1. Pickups now &quot;stored&quot; in hotbar...can have max 3 and cycle between them&#10;2. Player can now use a pickup by selecting it in hotbar and pressing SPACE&#10;3. Standing on spikes when &quot;Bad = Good&quot; runs out, will now kill player&#10;4. Player can now jump from Spikes if &quot;Bad = Good&quot;&#10;5. Added temp/test &quot;Double jump&quot; pickup type">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OneRuleChangesEverythingGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneRuleChangesEverythingGame/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/InputSystem_Actions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InputSystem_Actions.inputactions" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GameController.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GameController.prefab" afterDir="false" />
@@ -29,7 +29,11 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scenes/TEST_SCENE.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scripts/GameController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameVariables.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scripts/PickUpController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scripts/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SettingsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.11.1/InputSystem/Plugins/PlayerInput/PlayerInput.cs" root0="SKIP_HIGHLIGHTING" />
@@ -150,7 +154,7 @@
       <workItem from="1730909201828" duration="6244000" />
       <workItem from="1731000667547" duration="3779000" />
       <workItem from="1731076994037" duration="6704000" />
-      <workItem from="1731142450642" duration="16374000" />
+      <workItem from="1731142450642" duration="17703000" />
     </task>
     <task id="LOCAL−00001" summary="initial">
       <option name="closed" value="true" />
@@ -250,7 +254,14 @@
       <option name="presentableId" value="LOCAL−00014" />
       <updated>1731084291373</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL−00015" summary="1. Pickups now &quot;stored&quot; in hotbar...can have max 3 and cycle between them&#10;2. Player can now use a pickup by selecting it in hotbar and pressing SPACE&#10;3. Standing on spikes when &quot;Bad = Good&quot; runs out, will now kill player&#10;4. Player can now jump from Spikes if &quot;Bad = Good&quot;&#10;5. Added temp/test &quot;Double jump&quot; pickup type">
+      <option name="closed" value="true" />
+      <created>1731160643704</created>
+      <option name="number" value="LOCAL−00015" />
+      <option name="presentableId" value="LOCAL−00015" />
+      <updated>1731160643704</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,6 +306,7 @@
     <MESSAGE value="1. Spikes prefab&#10;2. Some levels&#10;3. Die message" />
     <MESSAGE value="movement testing" />
     <MESSAGE value="MOON GRAVITY WIP + new level" />
-    <option name="LAST_COMMIT_MESSAGE" value="MOON GRAVITY WIP + new level" />
+    <MESSAGE value="1. Pickups now &quot;stored&quot; in hotbar...can have max 3 and cycle between them&#10;2. Player can now use a pickup by selecting it in hotbar and pressing SPACE&#10;3. Standing on spikes when &quot;Bad = Good&quot; runs out, will now kill player&#10;4. Player can now jump from Spikes if &quot;Bad = Good&quot;&#10;5. Added temp/test &quot;Double jump&quot; pickup type" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Pickups now &quot;stored&quot; in hotbar...can have max 3 and cycle between them&#10;2. Player can now use a pickup by selecting it in hotbar and pressing SPACE&#10;3. Standing on spikes when &quot;Bad = Good&quot; runs out, will now kill player&#10;4. Player can now jump from Spikes if &quot;Bad = Good&quot;&#10;5. Added temp/test &quot;Double jump&quot; pickup type" />
   </component>
 </project>
