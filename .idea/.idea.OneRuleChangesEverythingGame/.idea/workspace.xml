@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a4e12fc-386e-4c11-8ee5-0ecd9e671981" name="Changes" comment="1. Pickups now &quot;stored&quot; in hotbar...can have max 3 and cycle between them&#10;2. Player can now use a pickup by selecting it in hotbar and pressing SPACE&#10;3. Standing on spikes when &quot;Bad = Good&quot; runs out, will now kill player&#10;4. Player can now jump from Spikes if &quot;Bad = Good&quot;&#10;5. Added temp/test &quot;Double jump&quot; pickup type">
+    <list default="true" id="5a4e12fc-386e-4c11-8ee5-0ecd9e671981" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OneRuleChangesEverythingGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneRuleChangesEverythingGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputSystem_Actions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InputSystem_Actions.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GameController.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GameController.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PickUp.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PickUp.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/TEST_SCENE.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TEST_SCENE.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PickUpController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PickUpController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/todo.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,11 +20,7 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scenes/TEST_SCENE.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scripts/GameController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameVariables.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scripts/PickUpController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scripts/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SettingsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.11.1/InputSystem/Plugins/PlayerInput/PlayerInput.cs" root0="SKIP_HIGHLIGHTING" />
@@ -44,6 +31,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/ef03b3d050364d868640c193e219b45d1cba00/2d/c2db636a/020002F3Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4369fda1a37e41c49e5bb0f1e909a9292e600/4c/cdcc5e4d/ForceMode2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4369fda1a37e41c49e5bb0f1e909a9292e600/51/8af3d928/Rigidbody2D.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4369fda1a37e41c49e5bb0f1e909a9292e600/dd/d93fa434/BoxCollider2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b5bf0c891ea345fe93688f835df32fdc1dda00/4b/7971a66e/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b5bf0c891ea345fe93688f835df32fdc1dda00/ae/459ac1d8/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ef03b3d050364d868640c193e219b45d1cba00/1a/a58fccf6/SceneManager.cs" root0="SKIP_HIGHLIGHTING" />
@@ -76,7 +64,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "SpellingScopeSettingsId",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.General",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -154,7 +142,8 @@
       <workItem from="1730909201828" duration="6244000" />
       <workItem from="1731000667547" duration="3779000" />
       <workItem from="1731076994037" duration="6704000" />
-      <workItem from="1731142450642" duration="17703000" />
+      <workItem from="1731142450642" duration="17783000" />
+      <workItem from="1731172314283" duration="3011000" />
     </task>
     <task id="LOCAL−00001" summary="initial">
       <option name="closed" value="true" />
@@ -261,7 +250,14 @@
       <option name="presentableId" value="LOCAL−00015" />
       <updated>1731160643704</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL−00016" summary="Hotbar icons">
+      <option name="closed" value="true" />
+      <created>1731160722976</created>
+      <option name="number" value="LOCAL−00016" />
+      <option name="presentableId" value="LOCAL−00016" />
+      <updated>1731160722976</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,6 +303,7 @@
     <MESSAGE value="movement testing" />
     <MESSAGE value="MOON GRAVITY WIP + new level" />
     <MESSAGE value="1. Pickups now &quot;stored&quot; in hotbar...can have max 3 and cycle between them&#10;2. Player can now use a pickup by selecting it in hotbar and pressing SPACE&#10;3. Standing on spikes when &quot;Bad = Good&quot; runs out, will now kill player&#10;4. Player can now jump from Spikes if &quot;Bad = Good&quot;&#10;5. Added temp/test &quot;Double jump&quot; pickup type" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Pickups now &quot;stored&quot; in hotbar...can have max 3 and cycle between them&#10;2. Player can now use a pickup by selecting it in hotbar and pressing SPACE&#10;3. Standing on spikes when &quot;Bad = Good&quot; runs out, will now kill player&#10;4. Player can now jump from Spikes if &quot;Bad = Good&quot;&#10;5. Added temp/test &quot;Double jump&quot; pickup type" />
+    <MESSAGE value="Hotbar icons" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hotbar icons" />
   </component>
 </project>

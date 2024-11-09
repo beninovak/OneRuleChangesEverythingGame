@@ -44,6 +44,7 @@ public class GameController : MonoBehaviour {
     /* General */
     private GameObject player;
     private PlayerController pc;
+    private BoxCollider2D pcBC2D;
     private Rigidbody2D pcRb;
 
     /* Status effects */
@@ -60,8 +61,9 @@ public class GameController : MonoBehaviour {
         levelStartTimestamp = Time.time;
         player = GameObject.FindGameObjectWithTag("Player");
         pc = player.GetComponent<PlayerController>();
+        pcBC2D = player.GetComponent<BoxCollider2D>();
+        pcRb = player.GetComponent<Rigidbody2D>();
         pc.gc = this;
-        pcRb = pc.GetComponent<Rigidbody2D>();
         
         //  TODO - check if pickups and finishLines can be merged into a single array??
         GameObject[] pickups = GameObject.FindGameObjectsWithTag("Pickup");
@@ -93,7 +95,6 @@ public class GameController : MonoBehaviour {
     }
 
     private void Update() {
-
         if (shouldFadeLevelNameText) {
             HUDFadeInOut("levelName");
         }
@@ -107,6 +108,12 @@ public class GameController : MonoBehaviour {
                 HUDFadeInOut("statusEffect");
             }
         }
+    }
+
+    // TODO - REMOVE
+    // TEMP DON'T NEED THIS
+    private void FixedUpdate() {
+        Debug.Log(isBadGood);
     }
 
     public void KillPlayer() {
@@ -206,7 +213,7 @@ public class GameController : MonoBehaviour {
     }
     
     public void ApplyStatusEffect() {
-        if (availablePickups.Count == 0) return;
+        if (availablePickups.Count == 0 || selectedItemIndex < 0) return;
         
         timeSincePickupUsed = 0f;
         HUDCanvas.SetActive(true);
@@ -264,16 +271,16 @@ public class GameController : MonoBehaviour {
                 break;
             
             case PICK_UP_TYPES.BAD_IS_GOOD:
-
+                isBadGood = !isBadGood;
                 List<Collider2D> colliders = new List<Collider2D>();
-                Physics2D.OverlapCollider(pc.GetComponent<BoxCollider2D>(), colliders);
+                Physics2D.OverlapCollider(pcBC2D, colliders);
                 foreach (var collider in colliders) {
-                    if (collider.gameObject.CompareTag("Spike")) {
+                    Debug.Log(collider.gameObject.name);
+                    if (!isBadGood && collider.gameObject.CompareTag("Spike")) {
                         KillPlayer();
                         Destroy(pc.gameObject);
                     }
                 }
-                isBadGood = false;
                 break;
         }
     }
