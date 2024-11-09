@@ -145,5 +145,10 @@ MonoBehaviour:
     title: Bad = Good
     sprite: {fileID: 21300000, guid: 10762583c28ee214c86a0ea4a8083dd5, type: 3}
     duration: 5
+  - type: 3
+    title: Double jump
+    sprite: {fileID: 21300000, guid: 89e8ca6b3a150dc44b9e278cd31b1dbc, type: 3}
+    duration: 5
   typeSelf: 2
   gc: {fileID: 0}
+  pc: {fileID: 0}

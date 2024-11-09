@@ -114,7 +114,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2703221536682125626}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: Move
+        m_MethodName: UseItem
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -198,6 +198,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 6dd84a96-9ea4-4c17-a3dc-a214ae488ef0
     m_ActionName: 'Player/JumpDown[/Keyboard/s]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2703221536682125626}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: CycleItems
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 857dae8b-0bf5-4c79-842e-2a45a57d6aca
+    m_ActionName: 'Player/CycleItems[/Keyboard/tab]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player

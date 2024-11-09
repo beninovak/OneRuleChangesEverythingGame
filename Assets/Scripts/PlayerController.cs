@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -33,7 +34,6 @@ public class PlayerController : MonoBehaviour {
     private Vector2 startingPosition;
     private string currentItem = "";
     private Rigidbody2D rb;
-    private bool gravityDirection = true; // true for down, false for up
     
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
@@ -93,8 +93,11 @@ public class PlayerController : MonoBehaviour {
             
             case "Spike":
                 if (!gc.isBadGood) {
-                    Destroy(other.gameObject);
+                    // Destroy(other.gameObject);
                     Die();
+                } else if (isFalling) {
+                    canJump = true;
+                    rb.velocityX = 0f;
                 }
                 break;
         }
@@ -173,7 +176,13 @@ public class PlayerController : MonoBehaviour {
         gameObject.GetComponent<PlayerInput>().enabled = false;
     }
 
-    public void UseItem() {
-        Debug.Log($"Using item: {currentItem}");
+    public void CycleItems(InputAction.CallbackContext context) {
+        if (context.phase != InputActionPhase.Started) return;
+        gc.CycleItems();
+    }
+    
+    public void UseItem(InputAction.CallbackContext context) {
+        if (context.phase != InputActionPhase.Started) return;
+        gc.ApplyStatusEffect();
     }
 }

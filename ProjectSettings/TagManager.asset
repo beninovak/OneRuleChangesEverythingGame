@@ -17,6 +17,8 @@ TagManager:
   - Wall
   - Spike
   - Ceiling
+  - AbilityIconUI
+  - AbilityIconBorderUI
   layers:
   - Default
   - TransparentFX

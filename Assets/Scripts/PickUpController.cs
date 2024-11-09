@@ -11,6 +11,7 @@ public class PickUpController : MonoBehaviour {
         NONE,
         BAD_IS_GOOD, 
         REVERSE_GRAVITY,
+        DOUBLE_JUMP,
     };
     
     [Serializable]
@@ -65,8 +66,16 @@ public class PickUpController : MonoBehaviour {
     }
     
     private void OnPickup() {
-        gc.ApplyStatusEffect(self);
-        Destroy(gameObject);
+        PickUp pickUpClone = new PickUp {
+                type = self.type,
+                title = self.title,
+                sprite = self.sprite,
+                duration = self.duration,
+        };
+        
+        if (gc.AddItemToHotbar(pickUpClone)) {
+            Destroy(gameObject);
+        }
     }
 
     private void InitPickup(PICK_UP_TYPES type) {

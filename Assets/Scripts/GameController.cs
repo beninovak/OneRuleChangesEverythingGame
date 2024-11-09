@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
@@ -30,7 +31,7 @@ public class GameController : MonoBehaviour {
     private bool           hasActiveStatusEffect = false;
     private float          levelStartTimestamp;
     private float          levelFinalTime;
-    private float          timeSincePickup = 0f;
+    private float          timeSincePickupUsed = 0f;
     private float          levelNameFadeDuration = 2f;
     private float          pickupNotificationFadeDuration = 2f;
     private float          timeAfterFinishBeforeSceneSwitch = 3f;
@@ -39,14 +40,20 @@ public class GameController : MonoBehaviour {
     private Color          HUDTextColorHidden = new Color(1f, 1f, 1f, 0f);
     private Color          bigMessageBackgroundColorShown;
     private Color          bigMessageBackgroundColorHidden;
-
+    
+    /* General */
     private GameObject player;
     private PlayerController pc;
     private Rigidbody2D pcRb;
 
     /* Status effects */
     public bool isGravityReversed = false; 
-    public bool isBadGood = false; 
+    public bool isBadGood = false;
+    
+    private Image[]        abilityIcons = new Image[3];
+    private Image[]        abilityIconBorders = new Image[3];
+    private int            selectedItemIndex = -1;
+    public List<PickUp>    availablePickups = new ();
     
     private void Awake() {
         // Debug.Log($"Previous best time: {GameVariables.SCENE_TIMES[SceneManager.GetActiveScene().buildIndex - 1]}");
@@ -66,6 +73,18 @@ public class GameController : MonoBehaviour {
         foreach (GameObject finishLine in finishLines) {
             finishLine.GetComponent<FinishLineController>().gc = this;
         }
+
+        GameObject[] abilityIconGameObjects = GameObject.FindGameObjectsWithTag("AbilityIconUI").OrderBy(el => el.name).ToArray();;
+        for (int i = 0; i < 3 ; i++) {
+            abilityIcons[i] = abilityIconGameObjects[i].GetComponent<Image>();
+        }
+        
+        // Have to order this because FindGameObjectsWithTag() doesn't order things consistently
+        GameObject[] abilityIconBordersGameObjects = GameObject.FindGameObjectsWithTag("AbilityIconBorderUI").OrderBy(el => el.name).ToArray();
+        for (int i = 0; i < 3 ; i++) {
+            abilityIconBorders[i] = abilityIconBordersGameObjects[i].GetComponent<Image>();
+        }
+
 
         bigMessageBackgroundColorShown = levelNameBackgroundImage.color;
         bigMessageBackgroundColorHidden = new Color(bigMessageBackgroundColorShown.r, bigMessageBackgroundColorShown.g, bigMessageBackgroundColorShown.b, 0f);
@@ -133,21 +152,21 @@ public class GameController : MonoBehaviour {
                 break;
             
             case "statusEffect":
-                timeSincePickup += Time.deltaTime;
-                statusEffectRemainingDurationText.text = $"{statusEffect.duration - timeSincePickup:0.0}s"; // Wacky formatting ( string interpolation )
+                timeSincePickupUsed += Time.deltaTime;
+                statusEffectRemainingDurationText.text = $"{statusEffect.duration - timeSincePickupUsed:0.0}s"; // Wacky formatting ( string interpolation )
         
-                if (timeSincePickup >= statusEffect.duration) {
+                if (timeSincePickupUsed >= statusEffect.duration) {
                     RemoveStatusEffect();
                     return;
                 }
         
-                if (timeSincePickup <= pickupNotificationFadeDuration) {
+                if (timeSincePickupUsed <= pickupNotificationFadeDuration) {
                     statusEffectText.color = Color.Lerp(statusEffectText.color, HUDTextColorShown, pickupNotificationFadeDuration * Time.deltaTime);
                     return;
                 } 
         
                 // TODO - could probably optimize this if else
-                if (timeSincePickup <= 2 * pickupNotificationFadeDuration) {
+                if (timeSincePickupUsed <= 2 * pickupNotificationFadeDuration) {
                     statusEffectText.color = Color.Lerp(statusEffectText.color, HUDTextColorHidden, pickupNotificationFadeDuration * Time.deltaTime);
                 } else {
                     statusEffectText.color = HUDTextColorHidden;
@@ -160,16 +179,44 @@ public class GameController : MonoBehaviour {
                 break;
         }
     }
-    
-    public void ApplyStatusEffect(PickUp effect) {
-        HUDCanvas.SetActive(true);
-        statusEffect = effect;
-        hasActiveStatusEffect = true;
-        statusEffectImage.texture = ConvertSpriteToTexture2D(effect.sprite);
-        statusEffectImage.color = new Color(1f, 1f, 1f, 1f);
-        statusEffectText.text = effect.title;
 
-        switch (effect.type) {
+    public bool AddItemToHotbar(PickUp item) {
+        if (availablePickups.Count >= 3) return false;
+        
+        abilityIcons[availablePickups.Count].sprite = item.sprite;
+        abilityIcons[availablePickups.Count].color = new Color(1f, 1f, 1f, 1f);
+        availablePickups.Insert(availablePickups.Count, item);
+        return true;
+    }
+    
+    public void CycleItems() {
+        if (availablePickups.Count == 0) return;
+        
+        selectedItemIndex++;
+        if (selectedItemIndex >= availablePickups.Count) { // Max three items
+            selectedItemIndex = 0;
+        }
+        
+        for (int i = 0; i < availablePickups.Count; i++) {
+            abilityIconBorders[i].color = new Color(1f, 1f, 1f, 1f);
+            if (i == selectedItemIndex) {
+                abilityIconBorders[selectedItemIndex].color = new Color(1f, 0.25f, 0.25f, 1f);
+            }
+        }
+    }
+    
+    public void ApplyStatusEffect() {
+        if (availablePickups.Count == 0) return;
+        
+        timeSincePickupUsed = 0f;
+        HUDCanvas.SetActive(true);
+        statusEffect = availablePickups.ElementAt(selectedItemIndex);
+        hasActiveStatusEffect = true;
+        statusEffectImage.texture = ConvertSpriteToTexture2D(statusEffect.sprite);
+        statusEffectImage.color = new Color(1f, 1f, 1f, 1f);
+        statusEffectText.text = statusEffect.title;
+
+        switch (statusEffect.type) {
             case PICK_UP_TYPES.REVERSE_GRAVITY:
                 ReverseGravity();
                 break;
@@ -178,11 +225,34 @@ public class GameController : MonoBehaviour {
                 isBadGood = true;
                 break;
         }
+        
+        // UI and general cleanup after "consuming" the pickup 
+        abilityIconBorders[selectedItemIndex].color = new Color(1f, 1f, 1f, 1f);
+        // Adjust sprites of hotbar to reflect an item being used        
+        for (int i = selectedItemIndex; i < availablePickups.Count; i++) {
+
+            // Last pickup box
+            if (i == availablePickups.Count - 1) {
+                abilityIcons[i].sprite = null;
+                abilityIcons[i].color = new Color(1f, 1f, 1f, 0f);
+                break;
+            }
+            
+            abilityIcons[i].sprite = abilityIcons[i + 1].sprite;
+        }
+            
+        availablePickups.RemoveAt(selectedItemIndex);
+
+        if (availablePickups.Count == 0) {
+            selectedItemIndex = 0;
+        } else {
+            selectedItemIndex--;
+        }
     }
 
     private void RemoveStatusEffect() {
         hasActiveStatusEffect = false;
-        timeSincePickup = 0f;
+        timeSincePickupUsed = 0f;
         // statusEffect = new PickUp();
         statusEffectImage.texture = null;
         statusEffectImage.color = new Color(1f, 1f, 1f, 0f);
@@ -194,7 +264,15 @@ public class GameController : MonoBehaviour {
                 break;
             
             case PICK_UP_TYPES.BAD_IS_GOOD:
-                // TODO - Check if touching spike here...kill player if so
+
+                List<Collider2D> colliders = new List<Collider2D>();
+                Physics2D.OverlapCollider(pc.GetComponent<BoxCollider2D>(), colliders);
+                foreach (var collider in colliders) {
+                    if (collider.gameObject.CompareTag("Spike")) {
+                        KillPlayer();
+                        Destroy(pc.gameObject);
+                    }
+                }
                 isBadGood = false;
                 break;
         }

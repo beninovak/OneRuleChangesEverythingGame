@@ -10,4 +10,5 @@
 - ADD particle effects on Player ( landing on ground, dying, etc. )
 - ADD level select in MainMenu
 - SET level names on all GameControllers
+- FIX overlapping timers on top right corner after dying
 - CHECK TODOS
