@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static PickUpController;
@@ -25,6 +26,8 @@ public class GameController : MonoBehaviour {
     public TextMeshProUGUI levelTimeText;
     public TextMeshProUGUI finalTimeText;
     public GameObject      mainMessage;
+    public GameObject      dashCountBackground; 
+    public TextMeshProUGUI dashCountText;
 
     private bool           hasLevelFinished = false;
     private bool           shouldFadeLevelNameText = true; 
@@ -87,11 +90,15 @@ public class GameController : MonoBehaviour {
             abilityIconBorders[i] = abilityIconBordersGameObjects[i].GetComponent<Image>();
         }
 
-
         bigMessageBackgroundColorShown = levelNameBackgroundImage.color;
         bigMessageBackgroundColorHidden = new Color(bigMessageBackgroundColorShown.r, bigMessageBackgroundColorShown.g, bigMessageBackgroundColorShown.b, 0f);
         levelNameText.text = levelName;
         GameVariables.CURRENT_LEVEL_NAME = levelName;
+
+        if (pc.dashCount > 0) {
+            dashCountBackground.SetActive(true);
+            UpdateDashCountText(pc.dashCount);
+        }
     }
 
     private void Update() {
@@ -110,17 +117,22 @@ public class GameController : MonoBehaviour {
         }
     }
 
-    // TODO - REMOVE
-    // TEMP DON'T NEED THIS
-    private void FixedUpdate() {
-        Debug.Log(isBadGood);
-    }
-
     public void KillPlayer() {
         mainMessage.GetComponent<TextMeshProUGUI>().text = "YOU DIED";
         mainMessage.SetActive(true);
         
         Invoke(nameof(ResetLevel), 2f);
+    }
+
+    private void KillPlayerIfTouchingDeath() {
+        List<Collider2D> colliders = new List<Collider2D>();
+        Physics2D.OverlapCollider(pcBC2D, colliders);
+        foreach (var collider in colliders) {
+            if (!isBadGood && collider.gameObject.CompareTag("Spike")) {
+                KillPlayer();
+                Destroy(pc.gameObject);
+            }
+        }
     }
 
     private void ResetLevel() {
@@ -211,6 +223,10 @@ public class GameController : MonoBehaviour {
             }
         }
     }
+
+    public void UpdateDashCountText(int dashes) {
+        dashCountText.text = $"Dashes: {dashes}";
+    }
     
     public void ApplyStatusEffect() {
         if (availablePickups.Count == 0 || selectedItemIndex < 0) return;
@@ -229,7 +245,8 @@ public class GameController : MonoBehaviour {
                 break;
             
             case PICK_UP_TYPES.BAD_IS_GOOD:
-                isBadGood = true;
+                isBadGood = !isBadGood;
+                KillPlayerIfTouchingDeath();
                 break;
         }
         
@@ -272,15 +289,7 @@ public class GameController : MonoBehaviour {
             
             case PICK_UP_TYPES.BAD_IS_GOOD:
                 isBadGood = !isBadGood;
-                List<Collider2D> colliders = new List<Collider2D>();
-                Physics2D.OverlapCollider(pcBC2D, colliders);
-                foreach (var collider in colliders) {
-                    Debug.Log(collider.gameObject.name);
-                    if (!isBadGood && collider.gameObject.CompareTag("Spike")) {
-                        KillPlayer();
-                        Destroy(pc.gameObject);
-                    }
-                }
+                KillPlayerIfTouchingDeath();
                 break;
         }
     }

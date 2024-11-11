@@ -25,6 +25,7 @@ public class PickUpController : MonoBehaviour {
     public PickUp[] possiblePickups;
     private PickUp self;
     public PICK_UP_TYPES typeSelf;
+    public float durationSelf;
     
     private double yPos, totalYPos, radiansForSin = 0f;
     private bool incrementRadians = true;
@@ -39,7 +40,7 @@ public class PickUpController : MonoBehaviour {
             Array values = Enum.GetValues(typeof(PICK_UP_TYPES)); 
             typeSelf = (PICK_UP_TYPES)values.GetValue(rand.Next(1, values.Length));
         }
-        InitPickup(typeSelf);
+        InitPickup(typeSelf, durationSelf);
     }
 
     private void FixedUpdate() {
@@ -67,10 +68,10 @@ public class PickUpController : MonoBehaviour {
     
     private void OnPickup() {
         PickUp pickUpClone = new PickUp {
-                type = self.type,
-                title = self.title,
-                sprite = self.sprite,
-                duration = self.duration,
+            type = self.type,
+            title = self.title,
+            sprite = self.sprite,
+            duration = self.duration,
         };
         
         if (gc.AddItemToHotbar(pickUpClone)) {
@@ -78,13 +79,13 @@ public class PickUpController : MonoBehaviour {
         }
     }
 
-    private void InitPickup(PICK_UP_TYPES type) {
+    private void InitPickup(PICK_UP_TYPES type, float duration = 0f) {
         foreach (PickUp pickup in possiblePickups) {
             if (pickup.type == type) {
                 self.type = type;
                 self.title = pickup.title;
                 self.sprite = pickup.sprite;
-                self.duration = pickup.duration;
+                self.duration = (duration > 0f ? duration : pickup.duration);
                 GetComponent<SpriteRenderer>().sprite = self.sprite;
             }
         }

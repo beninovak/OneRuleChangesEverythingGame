@@ -1,17 +1,20 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour {
     
-    // ------ Movement variables ------ //
+    [Header("Movement")] // ------ Movement variables ------ //
     private string  actionName;
-
+    private InputActionPhase actionPhase;
+    
     // TODO - make all these private
     public float    moveForceGrounded = 1.3f,
                     moveForceAirborne = 0.1f,
                     jumpForce = 23f, // 23f enables jumps of height 3, but not 3.1
+                    dashForce = 25f,
                     startingDrag,
                     startingGravityScale,
                     fallingGravityScaleMultiplier,
@@ -24,18 +27,23 @@ public class PlayerController : MonoBehaviour {
                     isFalling = false,
                     isGrounded = true;
 
+    public int dashCount = 10;
     private Vector2 rightVector = Vector2.right;
     
-    private InputActionPhase actionPhase;
-    
-    // ------ Other ------ //
+    [Header("General")] // ------ Other ------ //
+    [HideInInspector]
     public GameController gc;
 
     private Vector2 startingPosition;
     private string currentItem = "";
     private Rigidbody2D rb;
+
+    [Header("Audio")] 
+    public  AudioClip    dashSoundEffect;
+    private AudioSource  audioSource;
     
     private void Start() {
+        audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         startingDrag = rb.drag;
         startingGravityScale = rb.gravityScale;
@@ -48,7 +56,7 @@ public class PlayerController : MonoBehaviour {
         } else if (movingLeft) {
             rb.AddForce(-rightVector * (isGrounded ? moveForceGrounded: moveForceAirborne), ForceMode2D.Impulse);
         } else {
-            rb.velocityX = 0f;
+            rb.velocityX = 0f; // TODO - asses for dashing...currently dash is "cancelled" if player stops moving after dash
         }
 
         if (wantsToJump && canJump) {
@@ -62,7 +70,7 @@ public class PlayerController : MonoBehaviour {
         rb.drag = !isFalling ? startingDrag : 0f;
 
         if (isFalling) {
-            timeFalling += Time.deltaTime; // TODO - this shouldn't happen in gravity scale is negative ( gravity is inverted )
+            timeFalling += Time.deltaTime;
             rb.gravityScale += fallingGravityScaleMultiplier * Time.deltaTime;
         } else {
             timeFalling = 0f;
@@ -172,6 +180,19 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+    public void Dash(InputAction.CallbackContext context) {
+        if (context.phase != InputActionPhase.Started || dashCount <= 0) return;
+        Vector2 direction = rb.velocityX < 0f ? Vector2.left : Vector2.right;
+        rb.AddForce(dashForce * direction, ForceMode2D.Impulse);
+        dashCount--;
+        gc.UpdateDashCountText(dashCount);
+
+        CancelInvoke();
+        audioSource.resource = dashSoundEffect;
+        audioSource.Play();
+        Invoke(nameof(OnAudioClipFinishedPlaying), dashSoundEffect.length);
+    }
+
     public void DisableMovement() {
         gameObject.GetComponent<PlayerInput>().enabled = false;
     }
@@ -184,5 +205,10 @@ public class PlayerController : MonoBehaviour {
     public void UseItem(InputAction.CallbackContext context) {
         if (context.phase != InputActionPhase.Started) return;
         gc.ApplyStatusEffect();
+    }
+
+    private void OnAudioClipFinishedPlaying() {
+        audioSource.Pause();
+        audioSource.resource = null;
     }
 }

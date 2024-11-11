@@ -11,4 +11,5 @@
 - ADD level select in MainMenu
 - SET level names on all GameControllers
 - FIX overlapping timers on top right corner after dying
+- ADD SuicideNet below AND above the level on levels with inverted gravity pickup
 - CHECK TODOS
