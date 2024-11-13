@@ -6,43 +6,47 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour {
     
-    [Header("Movement")] // ------ Movement variables ------ //
     private string  actionName;
     private InputActionPhase actionPhase;
     
     // TODO - make all these private
-    public float    moveForceGrounded = 1.3f,
-                    moveForceAirborne = 0.1f,
-                    jumpForce = 23f, // 23f enables jumps of height 3, but not 3.1
-                    dashForce = 25f,
-                    startingDrag,
-                    startingGravityScale,
-                    fallingGravityScaleMultiplier,
-                    timeFalling = 0f;
+    [Header("Movement")] // ------ Movement variables ------ //
+    public float    moveForceGrounded = 1.3f;
+    public float    moveForceAirborne = 0.1f;
+    public float    jumpForce = 23f; // 23f enables jumps of height 3, but not 3.1
+    public float    dashForce = 25f;
+    public float    startingDrag;
+    public float    startingGravityScale;
+    public float    fallingGravityScaleMultiplier;
+    public float    timeFalling = 0f;
     
-    private bool    canJump = true,
-                    movingLeft = false,
-                    movingRight = false,
-                    wantsToJump = false,
-                    isFalling = false,
-                    isGrounded = true;
+    private bool    canJump = true;
+    private bool    movingLeft = false;
+    private bool    movingRight = false;
+    private bool    wantsToJump = false;
+    private bool    isFalling = false;
+    private bool    isGrounded = true;
 
-    public int dashCount = 10;
+    public int      dashCount = 10;
     private Vector2 rightVector = Vector2.right;
     
     [Header("General")] // ------ Other ------ //
     [HideInInspector]
-    public GameController gc;
-
-    private Vector2 startingPosition;
-    private string currentItem = "";
-    private Rigidbody2D rb;
+    public  GameController gc;
+    private Rigidbody2D    rb;
+    private ParticleSystem ps;
+    private string         currentItem = "";
+    private Vector2        startingPosition;
+    private float          particleSpeed = 50f;
 
     [Header("Audio")] 
     public  AudioClip    dashSoundEffect;
     private AudioSource  audioSource;
     
     private void Start() {
+        ps = GetComponent<ParticleSystem>();
+        ps.Stop();
+        
         audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         startingDrag = rb.drag;
@@ -183,6 +187,12 @@ public class PlayerController : MonoBehaviour {
     public void Dash(InputAction.CallbackContext context) {
         if (context.phase != InputActionPhase.Started || dashCount <= 0) return;
         Vector2 direction = rb.velocityX < 0f ? Vector2.left : Vector2.right;
+
+        var main = ps.main;
+        main.startSpeed = particleSpeed * (rb.velocityX < 0f ? 1 : -1);
+        ps.Play();
+        Invoke(nameof(DisableParticleSystem), 0.5f);
+        
         rb.AddForce(dashForce * direction, ForceMode2D.Impulse);
         dashCount--;
         gc.UpdateDashCountText(dashCount);
@@ -195,6 +205,11 @@ public class PlayerController : MonoBehaviour {
 
     public void DisableMovement() {
         gameObject.GetComponent<PlayerInput>().enabled = false;
+    }
+
+    private void DisableParticleSystem() {
+        Debug.Log("STOPPING");
+        ps.Stop();
     }
 
     public void CycleItems(InputAction.CallbackContext context) {

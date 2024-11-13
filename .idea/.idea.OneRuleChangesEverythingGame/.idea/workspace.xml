@@ -6,30 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5a4e12fc-386e-4c11-8ee5-0ecd9e671981" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OneRuleChangesEverythingGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneRuleChangesEverythingGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputSystem_Actions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InputSystem_Actions.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GameController.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GameController.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spikes.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spikes.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_1.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_1.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_2.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_2.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_3.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_3.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_3.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_4.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_4.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main_Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main_Menu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/TEST_SCENE.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TEST_SCENE.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FinishLineController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FinishLineController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PickUpController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PickUpController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SettingsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SettingsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/spike_icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/spike_icon.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/todo.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,8 +21,6 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scenes/Level_1.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scenes/TEST_SCENE.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameVariables.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SettingsController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -63,6 +40,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ef03b3d050364d868640c193e219b45d1cba00/28/5cfc5b9f/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ef03b3d050364d868640c193e219b45d1cba00/31/a86544c3/Texture2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ef03b3d050364d868640c193e219b45d1cba00/4e/1c78a786/Quaternion.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ef03b3d050364d868640c193e219b45d1cba00/98/968740f5/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ef03b3d050364d868640c193e219b45d1cba00/ed/628a3bc3/Time.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7d303c2bf72cd4cec95665b89c457d265d2b8ef3ed6da17cd4f85587c2f9de7/System.Linq.cs" root0="SKIP_HIGHLIGHTING" />
@@ -169,7 +147,8 @@
       <workItem from="1731142450642" duration="17783000" />
       <workItem from="1731172314283" duration="4228000" />
       <workItem from="1731220241177" duration="2508000" />
-      <workItem from="1731344146004" duration="6216000" />
+      <workItem from="1731344146004" duration="6557000" />
+      <workItem from="1731522825072" duration="3600000" />
     </task>
     <task id="LOCAL−00001" summary="initial">
       <option name="closed" value="true" />
@@ -290,7 +269,14 @@
       <option name="presentableId" value="LOCAL−00017" />
       <updated>1731182333059</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL−00018" summary="1. New spike icon&#10;2. Added dash(WIP), dash counter above ability bar, and dash sound effect. Dash is bound to Space bar.&#10;3. &quot;UseItem&quot; action now bound on 'E' key&#10;4. Pickup duration of Pickup GameObject can now be set in editor&#10;5. Improved logic for killing player when &quot;Bad=Good&quot; runs out">
+      <option name="closed" value="true" />
+      <created>1731352473693</created>
+      <option name="number" value="LOCAL−00018" />
+      <option name="presentableId" value="LOCAL−00018" />
+      <updated>1731352473693</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -338,6 +324,7 @@
     <MESSAGE value="1. Pickups now &quot;stored&quot; in hotbar...can have max 3 and cycle between them&#10;2. Player can now use a pickup by selecting it in hotbar and pressing SPACE&#10;3. Standing on spikes when &quot;Bad = Good&quot; runs out, will now kill player&#10;4. Player can now jump from Spikes if &quot;Bad = Good&quot;&#10;5. Added temp/test &quot;Double jump&quot; pickup type" />
     <MESSAGE value="Hotbar icons" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="1. New spike icon&#10;2. Added dash(WIP), dash counter above ability bar, and dash sound effect. Dash is bound to Space bar.&#10;3. &quot;UseItem&quot; action now bound on 'E' key&#10;4. Pickup duration of Pickup GameObject can now be set in editor&#10;5. Improved logic for killing player when &quot;Bad=Good&quot; runs out" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. New spike icon&#10;2. Added dash(WIP), dash counter above ability bar, and dash sound effect. Dash is bound to Space bar.&#10;3. &quot;UseItem&quot; action now bound on 'E' key&#10;4. Pickup duration of Pickup GameObject can now be set in editor&#10;5. Improved logic for killing player when &quot;Bad=Good&quot; runs out" />
   </component>
 </project>
