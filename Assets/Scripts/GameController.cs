@@ -25,10 +25,12 @@ public class GameController : MonoBehaviour {
     public TextMeshProUGUI levelNameText;
     public TextMeshProUGUI levelTimeText;
     public TextMeshProUGUI finalTimeText;
+    public GameObject      abilityBar;
     public GameObject      mainMessage;
     public GameObject      dashCountBackground; 
     public TextMeshProUGUI dashCountText;
 
+    public bool            startWithoutAbilityBar = false;
     private bool           hasLevelFinished = false;
     private bool           shouldFadeLevelNameText = true; 
     private bool           hasActiveStatusEffect = false;
@@ -54,10 +56,11 @@ public class GameController : MonoBehaviour {
     public bool isGravityReversed = false; 
     public bool isBadGood = false;
     
+    [HideInInspector]
+    public List<PickUp>    availablePickups = new ();
     private Image[]        abilityIcons = new Image[3];
     private Image[]        abilityIconBorders = new Image[3];
     private int            selectedItemIndex = -1;
-    public List<PickUp>    availablePickups = new ();
     
     private void Awake() {
         // Debug.Log($"Previous best time: {GameVariables.SCENE_TIMES[SceneManager.GetActiveScene().buildIndex - 1]}");
@@ -90,6 +93,10 @@ public class GameController : MonoBehaviour {
             abilityIconBorders[i] = abilityIconBordersGameObjects[i].GetComponent<Image>();
         }
 
+        if (startWithoutAbilityBar) {
+            abilityBar.SetActive(false);    
+        }
+        
         bigMessageBackgroundColorShown = levelNameBackgroundImage.color;
         bigMessageBackgroundColorHidden = new Color(bigMessageBackgroundColorShown.r, bigMessageBackgroundColorShown.g, bigMessageBackgroundColorShown.b, 0f);
         levelNameText.text = levelName;
@@ -202,6 +209,7 @@ public class GameController : MonoBehaviour {
     public bool AddItemToHotbar(PickUp item) {
         if (availablePickups.Count >= 3) return false;
         
+        abilityBar.SetActive(true);
         abilityIcons[availablePickups.Count].sprite = item.sprite;
         abilityIcons[availablePickups.Count].color = new Color(1f, 1f, 1f, 1f);
         availablePickups.Insert(availablePickups.Count, item);

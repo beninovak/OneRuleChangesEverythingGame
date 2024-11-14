@@ -19,6 +19,7 @@ TagManager:
   - Ceiling
   - AbilityIconUI
   - AbilityIconBorderUI
+  - HUDCanvas
   layers:
   - Default
   - TransparentFX

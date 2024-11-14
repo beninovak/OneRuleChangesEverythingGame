@@ -789,9 +789,11 @@ MonoBehaviour:
   levelNameText: {fileID: 7037892947677640520}
   levelTimeText: {fileID: 4573899748229271429}
   finalTimeText: {fileID: 6118374866216069134}
+  abilityBar: {fileID: 1294801199027053291}
   mainMessage: {fileID: 904125642816091916}
   dashCountBackground: {fileID: 1995883989239018440}
   dashCountText: {fileID: 4609881116795762891}
+  startWithoutAbilityBar: 0
   isGravityReversed: 0
   isBadGood: 0
   availablePickups: []
@@ -1096,7 +1098,7 @@ GameObject:
   - component: {fileID: 8041355790339980375}
   m_Layer: 5
   m_Name: HUDCanvas
-  m_TagString: Untagged
+  m_TagString: HUDCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -26,6 +26,10 @@ public class SettingsController : MonoBehaviour {
         AudioListener.volume = 0.5f;
         masterVolumeSlider.value = 0.5f;
 
+        if (otherCanvas == null) {
+            otherCanvas = GameObject.FindGameObjectWithTag("HUDCanvas");
+        }
+        
         levelNameText.text = GameVariables.CURRENT_LEVEL_NAME;
     }
 

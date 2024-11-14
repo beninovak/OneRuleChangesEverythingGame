@@ -174,8 +174,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SettingsController, Assembly-CSharp
-        m_MethodName: RequestPauseUnpauseGame
-        m_Mode: 0
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -259,7 +259,7 @@ MonoBehaviour:
   startingGravityScale: 0
   fallingGravityScaleMultiplier: 25
   timeFalling: 0
-  dashCount: 10
+  dashCount: 0
   gc: {fileID: 0}
   dashSoundEffect: {fileID: 8300000, guid: 172b926df4725ed44b8bb9fc335300d6, type: 3}
 --- !u!212 &6808649725413187879
