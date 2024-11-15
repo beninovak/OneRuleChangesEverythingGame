@@ -442,7 +442,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2610775082350198925, guid: b6666b1c7e14eb34dbb93e2c00068fb7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.5
+      value: 6.35
       objectReference: {fileID: 0}
     - target: {fileID: 2610775082350198925, guid: b6666b1c7e14eb34dbb93e2c00068fb7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -758,7 +758,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 48646736069344604, guid: 1c166fa092660a44a90397039eb196a2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.457684
+      value: -15.39
       objectReference: {fileID: 0}
     - target: {fileID: 48646736069344604, guid: 1c166fa092660a44a90397039eb196a2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -833,9 +833,17 @@ PrefabInstance:
       value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7456716923874600940, guid: 1c166fa092660a44a90397039eb196a2, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7456716923874600940, guid: 1c166fa092660a44a90397039eb196a2, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 507596839}
+    - target: {fileID: 7456716923874600940, guid: 1c166fa092660a44a90397039eb196a2, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RequestPauseUnpauseGame
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

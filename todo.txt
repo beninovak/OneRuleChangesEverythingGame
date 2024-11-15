@@ -13,4 +13,5 @@
 - FIX overlapping timers on top right corner after dying
 - ADD SuicideNet below AND above the level on levels with inverted gravity pickup
 - MAKE sound effects
+- Landing on top of "Wall" doesn't grant a new jump...FIX
 - CHECK TODOS

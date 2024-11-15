@@ -25,6 +25,7 @@ public class GameController : MonoBehaviour {
     public TextMeshProUGUI levelNameText;
     public TextMeshProUGUI levelTimeText;
     public TextMeshProUGUI finalTimeText;
+    public TextMeshProUGUI abilityNameText;
     public GameObject      abilityBar;
     public GameObject      mainMessage;
     public GameObject      dashCountBackground; 
@@ -223,7 +224,8 @@ public class GameController : MonoBehaviour {
         if (selectedItemIndex >= availablePickups.Count) { // Max three items
             selectedItemIndex = 0;
         }
-        
+
+        abilityNameText.text = availablePickups[selectedItemIndex].title;
         for (int i = 0; i < availablePickups.Count; i++) {
             abilityIconBorders[i].color = new Color(1f, 1f, 1f, 1f);
             if (i == selectedItemIndex) {
@@ -277,6 +279,7 @@ public class GameController : MonoBehaviour {
 
         if (availablePickups.Count == 0) {
             selectedItemIndex = 0;
+            abilityNameText.text = string.Empty;
         } else {
             selectedItemIndex--;
         }
