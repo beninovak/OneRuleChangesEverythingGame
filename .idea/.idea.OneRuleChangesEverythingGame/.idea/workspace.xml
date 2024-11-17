@@ -6,11 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="5a4e12fc-386e-4c11-8ee5-0ecd9e671981" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OneRuleChangesEverythingGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OneRuleChangesEverythingGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GameController.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GameController.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PickUp.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PickUp.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FInishLine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/FInishLine.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spikes.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spikes.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TEST_SCENE.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TEST_SCENE.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_3.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/spike_icon_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/spike_icon_2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/todo.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,12 +29,11 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Prefabs/GameController.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scenes/TEST_SCENE.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scripts/GameController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scripts/GameController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameVariables.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Games/OneRuleChangesEverythingGame/Assets/Scripts/SettingsController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SettingsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.11.1/InputSystem/Plugins/PlayerInput/PlayerInput.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.11.1/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
@@ -157,7 +161,8 @@
       <workItem from="1731344146004" duration="6557000" />
       <workItem from="1731522825072" duration="3965000" />
       <workItem from="1731597271715" duration="3070000" />
-      <workItem from="1731685666951" duration="2686000" />
+      <workItem from="1731685666951" duration="2989000" />
+      <workItem from="1731858073107" duration="1364000" />
     </task>
     <task id="LOCAL−00001" summary="initial">
       <option name="closed" value="true" />
@@ -299,7 +304,14 @@
       <option name="presentableId" value="LOCAL−00020" />
       <updated>1731610680205</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL−00021" summary="1. Name of selected ability now shown above ability bar&#10;2. Horrible pickup sound effect">
+      <option name="closed" value="true" />
+      <created>1731697710829</created>
+      <option name="number" value="LOCAL−00021" />
+      <option name="presentableId" value="LOCAL−00021" />
+      <updated>1731697710829</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -350,6 +362,7 @@
     <MESSAGE value="1. New spike icon&#10;2. Added dash(WIP), dash counter above ability bar, and dash sound effect. Dash is bound to Space bar.&#10;3. &quot;UseItem&quot; action now bound on 'E' key&#10;4. Pickup duration of Pickup GameObject can now be set in editor&#10;5. Improved logic for killing player when &quot;Bad=Good&quot; runs out" />
     <MESSAGE value="Particle system experimentation" />
     <MESSAGE value="1. Option to have ability bar hidden until you get pickups&#10;2. Level 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Option to have ability bar hidden until you get pickups&#10;2. Level 3" />
+    <MESSAGE value="1. Name of selected ability now shown above ability bar&#10;2. Horrible pickup sound effect" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Name of selected ability now shown above ability bar&#10;2. Horrible pickup sound effect" />
   </component>
 </project>

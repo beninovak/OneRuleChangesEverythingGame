@@ -225,7 +225,7 @@ public class GameController : MonoBehaviour {
             selectedItemIndex = 0;
         }
 
-        abilityNameText.text = availablePickups[selectedItemIndex].title;
+        abilityNameText.text = $"{availablePickups[selectedItemIndex].title}: {availablePickups[selectedItemIndex].duration}s";
         for (int i = 0; i < availablePickups.Count; i++) {
             abilityIconBorders[i].color = new Color(1f, 1f, 1f, 1f);
             if (i == selectedItemIndex) {

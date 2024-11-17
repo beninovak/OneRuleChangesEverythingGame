@@ -14,4 +14,5 @@
 - ADD SuicideNet below AND above the level on levels with inverted gravity pickup
 - MAKE sound effects
 - Landing on top of "Wall" doesn't grant a new jump...FIX
+- ADD a "hint" explaining that the effect of a pickup is reversed once the timer runs out 
 - CHECK TODOS

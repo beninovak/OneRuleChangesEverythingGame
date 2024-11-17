@@ -86,7 +86,8 @@ public class PlayerController : MonoBehaviour {
         string colliderTag = other.gameObject.tag;
         switch (colliderTag) {
             case "SuicideNet":
-                gameObject.transform.position = startingPosition;
+                Die();
+                // gameObject.transform.position = startingPosition;
                 break;
         }
     }
