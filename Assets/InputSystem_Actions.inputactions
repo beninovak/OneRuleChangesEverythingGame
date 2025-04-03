@@ -83,6 +83,17 @@
                 },
                 {
                     "name": "",
+                    "id": "52606488-2b1c-4dfe-bf39-efa928f8d326",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "b6803441-a525-485f-af99-b7b291e82b76",
                     "path": "<Keyboard>/a",
                     "interactions": "",
@@ -94,11 +105,33 @@
                 },
                 {
                     "name": "",
+                    "id": "4316949f-ee98-4d66-a6db-45f5042371a5",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GoLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "eccf6078-a00c-4747-b4b1-5d3b68904fe4",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
+                    "action": "GoRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c87f427e-3dd7-4a62-bf2b-395112a9d72e",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "GoRight",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -127,8 +160,19 @@
                 },
                 {
                     "name": "",
+                    "id": "3d91aab2-3680-42ec-b20e-bb36114a9d40",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "JumpDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "fe852234-a091-4848-a845-d49e787f87ce",
-                    "path": "<Keyboard>/tab",
+                    "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
