@@ -21,8 +21,8 @@ public class PlayerController : MonoBehaviour {
     public float    timeFalling = 0f;
     
     private bool    canJump = true;
-    private bool    movingLeft = false;
-    private bool    movingRight = false;
+    private bool    wantsToMoveLeft = false;
+    private bool    wantsToMoveRight = false;
     private bool    wantsToJump = false;
     private bool    isFalling = false;
     private bool    isGrounded = true;
@@ -54,10 +54,11 @@ public class PlayerController : MonoBehaviour {
         startingPosition = transform.position;
     }
 
-    private void FixedUpdate() {
-        if (movingRight) {
+    private void FixedUpdate()
+    {
+        if (wantsToMoveRight) {
             rb.AddForce(rightVector * (isGrounded ? moveForceGrounded: moveForceAirborne), ForceMode2D.Impulse);
-        } else if (movingLeft) {
+        } else if (wantsToMoveLeft) {
             rb.AddForce(-rightVector * (isGrounded ? moveForceGrounded: moveForceAirborne), ForceMode2D.Impulse);
         } else {
             rb.velocityX = 0f; // TODO - asses for dashing...currently dash is "cancelled" if player stops moving after dash
@@ -92,8 +93,8 @@ public class PlayerController : MonoBehaviour {
         }
     }
     
-    private void OnCollisionEnter2D(Collision2D other) {
-        string colliderTag = other.gameObject.tag;
+    private void OnCollisionEnter2D(Collision2D col) {
+        string colliderTag = col.gameObject.tag;
 
         switch (colliderTag) {
             case "Platform":
@@ -104,9 +105,13 @@ public class PlayerController : MonoBehaviour {
                 }
                 break;
             
+            case "Wall":
+                CheckCanJumpConditionsOnWallCollide(col);
+                break;
+            
             case "Spike":
                 if (!gc.isBadGood) {
-                    // Destroy(other.gameObject);
+                    // Destroy(col.gameObject);
                     Die();
                 } else if (isFalling) {
                     canJump = true;
@@ -122,6 +127,52 @@ public class PlayerController : MonoBehaviour {
         //     // rb.drag = startingDrag;
         //     // Debug.Log($"Grounded: {isGrounded}. Name: {other.gameObject.name}");
         // }
+    }
+
+    private void OnCollisionStay2D(Collision2D col)
+    {
+        string colliderTag = col.gameObject.tag;
+
+        switch (colliderTag)
+        {
+            case "Wall":
+                CheckCanJumpConditionsOnWallCollide(col);
+                break;
+        }
+    }
+
+    private void CheckCanJumpConditionsOnWallCollide(Collision2D col)
+    {
+        float wallTopY = col.gameObject.transform.position.y + (col.gameObject.transform.localScale.y / 2);
+
+        List<ContactPoint2D> cps = new List<ContactPoint2D>();
+        col.GetContacts(cps);
+
+        float lowestContactPointY = float.MaxValue;
+        float leftmostContactPointX = float.MaxValue;
+        float rightmostContactPointX = float.MinValue;
+        foreach (ContactPoint2D cp in cps) {
+            if (cp.point.y < lowestContactPointY) {
+                lowestContactPointY = cp.point.y;
+            }
+            if (cp.point.x < leftmostContactPointX) {
+                leftmostContactPointX = cp.point.x;
+            }
+            if (cp.point.x > rightmostContactPointX) {
+                rightmostContactPointX = cp.point.x;
+            }
+        }
+
+        if (lowestContactPointY >= wallTopY) {
+            canJump = true;
+            // float wallLeftX = col.gameObject.transform.position.x - (col.gameObject.transform.localScale.x / 2);
+            // float wallRightX = col.gameObject.transform.position.x + (col.gameObject.transform.localScale.x / 2);
+            // float playerLeftX = transform.position.x - (transform.localScale.x / 2);
+            // float playerRightX = transform.position.x + (transform.localScale.x / 2);
+            //
+            // if (playerLeftX < wallRightX || playerRightX > wallLeftX) {
+            // }
+        }
     }
 
     // private void OnCollisionExit2D(Collision2D other) {
@@ -148,21 +199,21 @@ public class PlayerController : MonoBehaviour {
 
         switch (actionName, actionPhase) {
             case ("GoLeft", InputActionPhase.Started):
-                movingLeft = true;
-                movingRight = false;
+                wantsToMoveLeft = true;
+                wantsToMoveRight = false;
                 break;
             
             case ("GoLeft", InputActionPhase.Canceled):
-                movingLeft = false;
+                wantsToMoveLeft = false;
                 break;
             
             case ("GoRight", InputActionPhase.Started):
-                movingRight = true;
-                movingLeft= false;
+                wantsToMoveRight = true;
+                wantsToMoveLeft= false;
                 break;
             
             case ("GoRight", InputActionPhase.Canceled):
-                movingRight = false;
+                wantsToMoveRight = false;
                 break;
             
             case ("Jump", InputActionPhase.Started):
