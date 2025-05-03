@@ -72,17 +72,6 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "283c8d49-c2a4-4703-95bd-da893cec2e6b",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "52606488-2b1c-4dfe-bf39-efa928f8d326",
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
@@ -94,34 +83,12 @@
                 },
                 {
                     "name": "",
-                    "id": "b6803441-a525-485f-af99-b7b291e82b76",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "GoLeft",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "4316949f-ee98-4d66-a6db-45f5042371a5",
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "GoLeft",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "eccf6078-a00c-4747-b4b1-5d3b68904fe4",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "GoRight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -144,17 +111,6 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "UseItem",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "f0999dcf-c24c-45cd-9ea5-ff6edb9e2030",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "JumpDown",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour {
     
     // TODO - make all these private
     [Header("Movement")] // ------ Movement variables ------ //
-    public float    moveForceGrounded = 1.3f;
+    public float    moveForceGrounded = 3f;
     public float    moveForceAirborne = 0.1f;
     public float    jumpForce = 23f; // 23f enables jumps of height 3, but not 3.1
     public float    dashForce = 25f;
@@ -19,15 +19,17 @@ public class PlayerController : MonoBehaviour {
     public float    startingGravityScale;
     public float    fallingGravityScaleMultiplier;
     public float    timeFalling = 0f;
+    public float    maxVelocityX = 15f;
     
     private bool    canJump = true;
+    public bool     hasDoubleJump = false;
     private bool    wantsToMoveLeft = false;
     private bool    wantsToMoveRight = false;
     private bool    wantsToJump = false;
     private bool    isFalling = false;
     private bool    isGrounded = true;
 
-    public int      dashCount = 10;
+    public  int     dashCount = 10;
     private Vector2 rightVector = Vector2.right;
     
     [Header("General")] // ------ Other ------ //
@@ -35,7 +37,7 @@ public class PlayerController : MonoBehaviour {
     public  GameController gc;
     private Rigidbody2D    rb;
     private ParticleSystem ps;
-    private string         currentItem = "";
+    // private string         currentItem = "";
     private Vector2        startingPosition;
     private float          particleSpeed = 50f;
 
@@ -64,8 +66,20 @@ public class PlayerController : MonoBehaviour {
             rb.velocityX = 0f; // TODO - asses for dashing...currently dash is "cancelled" if player stops moving after dash
         }
 
+        if (rb.velocityX > maxVelocityX) {
+            rb.velocityX = maxVelocityX;
+        } else if (rb.velocityX < maxVelocityX * -1) {
+            rb.velocityX = maxVelocityX * -1;
+        }
+
         if (wantsToJump && canJump) {
-            canJump = false;
+            if (hasDoubleJump) {
+                canJump = true;
+                hasDoubleJump = false;
+            } else {
+                canJump = false;
+            }
+            
             wantsToJump = false;
             rb.AddForce((gc.isGravityReversed ? Vector2.down : Vector2.up) * jumpForce, ForceMode2D.Impulse);
         }
@@ -101,6 +115,7 @@ public class PlayerController : MonoBehaviour {
             case "Ceiling":
                 if (isFalling) {
                     canJump = true;
+                    hasDoubleJump = true;
                     rb.velocityX = 0f;
                 }
                 break;

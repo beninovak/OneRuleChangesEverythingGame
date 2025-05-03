@@ -238,9 +238,19 @@ public class GameController : MonoBehaviour {
         dashCountText.text = $"Dashes: {dashes}";
     }
     
-    public void ApplyStatusEffect() {
+    public void ApplyStatusEffect(PickUp pickupToApply = new PickUp()) {
+
+        if (!pickupToApply.Equals(default(PickUp))) {
+            Debug.Log("Applying insta status effect");
+            statusEffect = pickupToApply;
+            ApplyAppropriateStatusEffect();
+            return;
+        }
+        
         if (availablePickups.Count == 0 || selectedItemIndex < 0) return;
         
+        /* TODO - Move this to ApplyAppropriateStatusEffect function ?? */
+        /* Fix behaviour of picking up insta pickup when another pickup is already in use. Old status effect should be overriden */
         timeSincePickupUsed = 0f;
         HUDCanvas.SetActive(true);
         statusEffect = availablePickups.ElementAt(selectedItemIndex);
@@ -248,17 +258,9 @@ public class GameController : MonoBehaviour {
         statusEffectImage.texture = ConvertSpriteToTexture2D(statusEffect.sprite);
         statusEffectImage.color = new Color(1f, 1f, 1f, 1f);
         statusEffectText.text = statusEffect.title;
+        /* END TODO */
 
-        switch (statusEffect.type) {
-            case PICK_UP_TYPES.REVERSE_GRAVITY:
-                ReverseGravity();
-                break;
-            
-            case PICK_UP_TYPES.BAD_IS_GOOD:
-                isBadGood = !isBadGood;
-                KillPlayerIfTouchingDeath();
-                break;
-        }
+        ApplyAppropriateStatusEffect();
         
         // UI and general cleanup after "consuming" the pickup 
         abilityIconBorders[selectedItemIndex].color = new Color(1f, 1f, 1f, 1f);
@@ -285,14 +287,8 @@ public class GameController : MonoBehaviour {
         }
     }
 
-    private void RemoveStatusEffect() {
-        hasActiveStatusEffect = false;
-        timeSincePickupUsed = 0f;
-        // statusEffect = new PickUp();
-        statusEffectImage.texture = null;
-        statusEffectImage.color = new Color(1f, 1f, 1f, 0f);
-        statusEffectRemainingDurationText.text = string.Empty;
-        
+    private void ApplyAppropriateStatusEffect()
+    {
         switch (statusEffect.type) {
             case PICK_UP_TYPES.REVERSE_GRAVITY:
                 ReverseGravity();
@@ -302,7 +298,22 @@ public class GameController : MonoBehaviour {
                 isBadGood = !isBadGood;
                 KillPlayerIfTouchingDeath();
                 break;
+
+            case PICK_UP_TYPES.DOUBLE_JUMP:
+                pc.hasDoubleJump = !pc.hasDoubleJump;
+                break;
         }
+    }
+
+    private void RemoveStatusEffect() {
+        hasActiveStatusEffect = false;
+        timeSincePickupUsed = 0f;
+        // statusEffect = new PickUp();
+        statusEffectImage.texture = null;
+        statusEffectImage.color = new Color(1f, 1f, 1f, 0f);
+        statusEffectRemainingDurationText.text = string.Empty;
+
+        ApplyAppropriateStatusEffect(); // Removing status effect just applies the opposite of the current one.
     }
 
     private void ReverseGravity() {

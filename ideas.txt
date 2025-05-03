@@ -2,8 +2,11 @@
 - Risky finishes ( TM style )
 
 [PICK UP TYPES]
-- Move = die
+- Move = die -- ??
 - Reverse gravity
 - Player = circle
 - Double jump ?
 - Deadly obstacle != deadly
+
+Maybe have pickups that are used automatically?
+Like MOVE OR DIE <- would make no sense to let the Player activate this by themselves.

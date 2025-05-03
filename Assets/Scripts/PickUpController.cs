@@ -26,6 +26,7 @@ public class PickUpController : MonoBehaviour {
     private PickUp self;
     public PICK_UP_TYPES typeSelf;
     public float durationSelf;
+    public bool applySelfOnPickup;
     
     private double yPos, totalYPos, radiansForSin = 0f;
     private bool incrementRadians = true;
@@ -73,8 +74,11 @@ public class PickUpController : MonoBehaviour {
             sprite = self.sprite,
             duration = self.duration,
         };
-        
-        if (gc.AddItemToHotbar(pickUpClone)) {
+
+        if (applySelfOnPickup) {
+            gc.ApplyStatusEffect(pickUpClone);
+            Destroy(gameObject);
+        } else if (gc.AddItemToHotbar(pickUpClone)) {
             Destroy(gameObject);
         }
     }
